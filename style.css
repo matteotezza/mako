@@ -1,0 +1,68 @@
+.header{
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    top:0;
+    left:50%;
+    transform: translateX(-50%);
+    padding: 30px;
+    display: flex;
+    max-width: 1350px;
+  }
+.hamburger{display: none;}
+
+@media (max-width: 768px) {
+
+  .cta{display: none;}
+
+  .menu{position: absolute; top:0; right:-100%;background: rgb(0, 0, 0);height: 100vh;padding-top: 80px;}
+  .menu li{display: block; position: relative;}
+  .menu li a{padding: 15px 30px;font-size: 20px;}
+
+  .menu--open{right:0%;}
+
+  .hamburger{
+    display: block;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top:40px;
+    right:30px
+  }
+  .hamburger span{background: rgb(0, 0, 0);height: 3px;width: 100%;display: block;margin-bottom: 5px;}
+}
+.menu{
+    position: relative;
+    transition: all 1s cubic-bezier(.215, .61, .355, 1);
+    width: 100%;
+    z-index: 0;
+    font-weight: bold;  
+}
+  
+.menu li{display: inline-block;}
+  
+.menu li a{
+    color: rgb(0, 0, 0);
+    opacity: 0.5;
+    padding: 15px;
+    display: block;
+  }
+.classe_iniziale{
+    margin: auto;
+    width: 300px;
+}
+form{
+    width: 300px;
+}
+form, form *{
+    width: fit-content;
+}
+.logopoke img{
+
+}
+.contenitore-inizio{
+    margin-top: 150px;
+    display: flex;
+    margin-left: 200px;
+}
