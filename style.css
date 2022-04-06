@@ -9,6 +9,10 @@
     display: flex;
     max-width: 1350px;
   }
+body{
+  background-image: url('./immagini/background.png');
+  background-repeat: repeat;
+}
 .hamburger{display: none;}
 
 @media (max-width: 768px) {
@@ -48,6 +52,11 @@
     padding: 15px;
     display: block;
   }
+.contenitore.inizio{
+  margin: auto;
+  background-image: url('background.png');
+  background-repeat: repeat;
+}
 .classe_iniziale{
     margin: auto;
     width: 300px;
@@ -58,11 +67,57 @@ form{
 form, form *{
     width: fit-content;
 }
-.logopoke img{
+.box1{
+  margin-left: 2%;
+  font-size: 25px;
+}
+.box2{
+  transition: transform .2s;
+  margin-left: 8%;
+}
+.box2:hover{
+  transform: scale(1.1);
+}
+.box3:hover{
+  transform: scale(1.1);
+}
 
+.box3{
+  transition: transform .2s;
 }
 .contenitore-inizio{
-    margin-top: 150px;
+  margin-top: 140px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: flex;
-    margin-left: 200px;
+}
+.contenitore-inizio p{
+  margin-top: 20px;
+}
+.font-figo{
+  font-size: 30px;
+  font-family: 'Pokemon Solid', sans-serif;
+  text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+  margin-top: 10px;
+}
+.main-carousel{padding: 150px 0;}
+
+.carousel-cell{
+    height: 280px; 
+    width: 280px;
+    text-align: center;
+    margin-right: 40px;
+}
+.contenitore2{
+  text-align: center;
+}
+#zygardecard{
+    background: url('immagini/zygarde.png') center;
+}
+
+#bustina-al{
+    background: url('immagini/vandevoordt.jpg') center;
+}
+#box-ee{
+    background: url('immagini/box-ee.jpg') center;
+
 }
