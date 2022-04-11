@@ -7,22 +7,17 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
     <link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
-        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
-        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,700;0,900;1,300&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,700;0,900;1,300&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.min.css"
-        integrity="sha512-BiFZ6oflftBIwm6lYCQtQ5DIRQ6tm02svznor2GYQOfAlT3pnVJ10xCrU3XuXnUrWQ4EG8GKxntXnYEdKY0Ugg=="
-        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.min.css" integrity="sha512-BiFZ6oflftBIwm6lYCQtQ5DIRQ6tm02svznor2GYQOfAlT3pnVJ10xCrU3XuXnUrWQ4EG8GKxntXnYEdKY0Ugg==" crossorigin="anonymous" />
 
 </head>
 
@@ -34,8 +29,8 @@
         <ul class="menu">
             <li><a href="home_personale.php">Home</a></li>
             <li><a href="carrello.php">Carrello</a></li>
-            <li><a href="registrazione.php">Registrazione</a></li>
-            <li><a href="login.php">Login</a></li>
+            <li><a href="pages/registrazione.php">Registrazione</a></li>
+            <li><a href="pages/login.php">Login</a></li>
         </ul>
         <div class="cta">
             <a href="founders.html" class="button"><img class="logo" src="immagini/founders.png" height="40px" alt=""></a>
@@ -57,7 +52,7 @@
                 box più rari </p>
         </div>
         <div class="box2">
-            <img class="logo" src="immagini/boltund.png" height="400px" alt="">
+            <img class="logo" src="immagini/boltund.png" height="350px" alt="">
         </div>
         <div class="box3">
             <img class="logo" src="immagini/box-sunmoon.png" height="400px" alt="">
@@ -66,20 +61,39 @@
     <div class="contenitore2">
         <h1 class="font-figo"> Top vendite </h1>
         <div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true }'>
-        <a href="fut.html" class="carousel-cell" id="zygardecard"></a>
-        <a href="carriera.html" class="carousel-cell" id="bustina-al"></a>
-        <a href="proclub.html" class="carousel-cell" id="box-ee"> </a>
+            <a href="fut.html" class="carousel-cell" id="zygardecard"></a>
+            <a href="carriera.html" class="carousel-cell" id="set-fuoriclasse"></a>
+            <a href="proclub.html" class="carousel-cell" id="box-ee"> </a>
+            <a href="proclub.html" class="carousel-cell" id="pikachu-vmax"> </a>
+            <a href="proclub.html" class="carousel-cell" id="bustina-vs"> </a>
+            <a href="proclub.html" class="carousel-cell" id="bustina-sdl"> </a>
+            <a href="proclub.html" class="carousel-cell" id="set-fc"> </a>
+        </div>
     </div>
+    <h1 class="font-figo"> Cosa cerchi? </h1>
+    <div class="contenitore3">
+        <div class="box4">
+            <img class="logo" src="immagini/bustine-gds.png" height="400px" alt="">
+            <p> Bustine </p>
+        </div>
+        <div class="box5">
+            <img class="logo" src="immagini/arceus-v.png" height="400px" alt="">
+            <p> Box </p>
+        </div>
+        <div class="box6">
+            <img class="logo" src="immagini/boltund" height="400px" alt="">
+            <p> Carte singole </p>
+        </div>
+
+
     </div>
 
     <!-- Script -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js"
-        integrity="sha512-cA8gcgtYJ+JYqUe+j2JXl6J3jbamcMQfPe0JOmQGDescd+zqXwwgneDzniOd3k8PcO7EtTW6jA7L4Bhx03SXoA=="
-        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js" integrity="sha512-cA8gcgtYJ+JYqUe+j2JXl6J3jbamcMQfPe0JOmQGDescd+zqXwwgneDzniOd3k8PcO7EtTW6jA7L4Bhx03SXoA==" crossorigin="anonymous"></script>
 
     <script>
-        $(document).ready(function () {
-            $(".hamburger").on('click', function () {
+        $(document).ready(function() {
+            $(".hamburger").on('click', function() {
                 $(".menu").toggleClass("menu--open");
             });
         });

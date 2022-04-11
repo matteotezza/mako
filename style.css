@@ -1,3 +1,7 @@
+.registrazione{
+  background: url('immagini/background.png') center;
+}
+
 .header{
     width: 100%;
     position: fixed;
@@ -41,7 +45,8 @@ body{
     transition: all 1s cubic-bezier(.215, .61, .355, 1);
     width: 100%;
     z-index: 0;
-    font-weight: bold;  
+    font-weight: bold;
+    margin-top: 1.5%;
 }
   
 .menu li{display: inline-block;}
@@ -81,14 +86,13 @@ form, form *{
 .box3:hover{
   transform: scale(1.1);
 }
-
 .box3{
   transition: transform .2s;
 }
 .contenitore-inizio{
   margin-top: 140px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    display: flex;
+  display: flex;
 }
 .contenitore-inizio p{
   margin-top: 20px;
@@ -97,11 +101,12 @@ form, form *{
   font-size: 30px;
   font-family: 'Pokemon Solid', sans-serif;
   text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
-  margin-top: 10px;
+  margin-top: 40px;
 }
-.main-carousel{padding: 150px 0;}
+.main-carousel{padding: 0px 0;}
 
 .carousel-cell{
+    margin-top: 30px;
     height: 280px; 
     width: 280px;
     text-align: center;
@@ -110,14 +115,40 @@ form, form *{
 .contenitore2{
   text-align: center;
 }
+.contenitore2 h1{
+  margin-top: 10%;
+}
 #zygardecard{
     background: url('immagini/zygarde.png') center;
+    background-size: contain;
 }
 
-#bustina-al{
-    background: url('immagini/vandevoordt.jpg') center;
+#set-fuoriclasse{
+    background: url('immagini/set-fuoriclasse.png') center;
+    background-size: contain;
+
 }
 #box-ee{
     background: url('immagini/box-ee.jpg') center;
-
+    background-size: contain;
+}
+#pikachu-vmax{
+  background: url('immagini/pikachu-vmax.png') center;
+  background-size: contain;
+}
+#bustina-vs{
+  background: url('immagini/bustina-vs.png') center;
+  background-size: contain;
+}
+#bustina-sdl{
+  background: url('immagini/bustina-sdl.png') center;
+  background-size: contain;
+}
+#set-fc{
+  background: url('immagini/set-fc.png') center;
+  background-size: contain;
+}
+.contenitore3{
+  text-align: center;
+  display: flex;
 }
