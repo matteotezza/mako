@@ -73,15 +73,15 @@
     <h1 class="font-figo"> Cosa cerchi? </h1>
     <div class="contenitore3">
         <div class="box4">
-            <img class="logo" src="immagini/bustine-gds.png" height="400px" alt="">
+            <a href="pages/bustine.php"> <img class="logo" src="immagini/bustine-gds.png" height="400px" alt=""></a>
             <p> Bustine </p>
         </div>
         <div class="box5">
-            <img class="logo" src="immagini/arceus-v.png" height="400px" alt="">
+        <a href="pages/bustine.php"><img class="logo" src="immagini/arceus-v.png" height="400px" alt="">
             <p> Box </p>
         </div>
         <div class="box6">
-            <img class="logo" src="immagini/boltund" height="400px" alt="">
+        <a href="pages/bustine.php"><img class="logo" src="immagini/boltund" height="400px" alt="">
             <p> Carte singole </p>
         </div>
 

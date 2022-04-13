@@ -1,5 +1,7 @@
 .registrazione{
-  background: url('immagini/background.png') center;
+  background: url('../immagini/background.png') center;
+  background-repeat: repeat;
+  align-items: center;
 }
 
 .header{
@@ -151,4 +153,22 @@ form, form *{
 .contenitore3{
   text-align: center;
   display: flex;
+}
+
+.contenitore4 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  position: relative;
+}
+
+.contenitore5 {
+  width: 25%;
+  margin: auto;
+  position: relative;
+}
+
+.centered{
+  font-weight: 200px;
+  text-align: center;
 }

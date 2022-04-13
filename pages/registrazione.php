@@ -8,7 +8,6 @@
     if(isset($_POST["telefono"])) $telefono = $_POST["telefono"];  else $telefono = "";
     if(isset($_POST["comune"])) $comune = $_POST["comune"];  else $comune = "";
     if(isset($_POST["indirizzo"])) $indirizzo = $_POST["indirizzo"];  else $indirizzo = "";
-    if(isset($_POST["tipologia"])) $tipologia = $_POST["tipologia"];  else $tipologia = "utenti";
 ?>
 
 <!DOCTYPE html>
@@ -18,6 +17,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 <div class="registrazione">
