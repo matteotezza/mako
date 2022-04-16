@@ -10,7 +10,7 @@
 <body>
     <div class="header">
         <div class="logo">
-        <img class="logo" src="immagini/logopoke" width="200px" height="auto" alt="">
+        <a href="/index.php"><img class="logo" src="immagini/logopoke.png" width="200px" height="auto" alt=""></a>
         </div>
         <ul class="menu">
             <li><a href="index.html">Home</a></li>
