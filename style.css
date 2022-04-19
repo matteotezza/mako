@@ -168,7 +168,20 @@ form, form *{
   position: relative;
 }
 
+.contenitore6 {
+  width: 33%;
+  margin: auto;
+  position: relative;
+}
+
+.contenitore7 {
+  width: 50%;
+  margin: auto;
+  position: relative;
+}
+
 .centered{
   font-weight: 200px;
   text-align: center;
 }
+

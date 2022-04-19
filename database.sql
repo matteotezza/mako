@@ -29,8 +29,13 @@ CREATE TABLE IF NOT EXISTS `box` (
 /*!40000 ALTER TABLE `box` DISABLE KEYS */;
 INSERT INTO `box` (`carta_promo`, `codice_box`, `prezzo`) VALUES
 	(NULL, 'Astri Lucenti (set allenatore fuoriclasse)', 45),
+	('Copperajah V', 'Collezione Copperajah V', 25),
+	('Kangaskhan GX', 'Collezione Kangaskhan GX', 20),
+	('Blastoise Vmax', 'Collezione Lotte Blastoise-VMAX', 25),
 	(NULL, 'Evoluzioni eteree', 120),
-	('Drednaw', 'Futuri Campioni (palestra di Heelford)', 25);
+	('Drednaw', 'Futuri Campioni (palestra di Heelford)', 25),
+	(NULL, 'Ombre Infuocate', 500),
+	(NULL, 'Sole e Luna', 200);
 /*!40000 ALTER TABLE `box` ENABLE KEYS */;
 
 -- Dump della struttura di tabella negozio_pokemon.bustina
@@ -41,18 +46,18 @@ CREATE TABLE IF NOT EXISTS `bustina` (
   KEY `espansione` (`espansione`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dump dei dati della tabella negozio_pokemon.bustina: ~9 rows (circa)
+-- Dump dei dati della tabella negozio_pokemon.bustina: ~14 rows (circa)
 /*!40000 ALTER TABLE `bustina` DISABLE KEYS */;
 INSERT INTO `bustina` (`espansione`, `prezzo`) VALUES
 	('Astri Lucenti', 5.5),
-	('Colpo Fusione', NULL),
+	('Colpo Fusione', 5.5),
 	('Eclissi Cosmica', 5.5),
 	('Evoluzioni', 6),
-	('Fiamme Oscure', NULL),
-	('Fragore Ribelle', NULL),
+	('Fiamme Oscure', 5.5),
+	('Fragore Ribelle', 5.5),
 	('Futuri Campioni', 6),
 	('Legami Inossidabili', 5.5),
-	('Regno Glaciale', NULL),
+	('Regno Glaciale', 5.5),
 	('Set Jungle', 15),
 	('Stili di Lotta', 5.5),
 	('Voltaggio Sfolgorante', 5.5);
@@ -107,7 +112,7 @@ INSERT INTO `carta` (`nome_carta`, `espansione`, `codice_carta`, `prezzo`) VALUE
 	('Mew Vmax', 'Colpo Fusione', 268, 57.5),
 	('Energia Pesca', 'Eclissi Cosmica', 271, 7.5),
 	('Chicco, Spighetto e Maisello', 'Colpo Fusione', 273, 10),
-	('Energia Fuoco', 'Colpo Fusione', 284, 10);
+	('Fosco', 'Colpo Fusione', 279, 10);
 /*!40000 ALTER TABLE `carta` ENABLE KEYS */;
 
 -- Dump della struttura di tabella negozio_pokemon.cliente
