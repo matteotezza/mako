@@ -13,7 +13,7 @@
 <body>
 <div class="header">
         <div class="logo">
-            <img class="logo" src="../immagini/logopoke.png" width="200px" height="auto" alt="">
+            <a href="/index.php"><img class="logo" src="../immagini/logopoke.png" width="200px" height="auto" alt=""></a>
         </div>
         <ul class="menu">
             <li><a href="home_personale.php">Home</a></li>
@@ -30,32 +30,34 @@
             <span></span>
         </div>
     </div>
-    
-    <h1 class="font-figo centered"> Ecoo i Box a tua disposizione! </h1>
-    <div class="contenitore4">
-        <div class="contenitore7">
-            <img  src="../immagini/B/b1.png" height="400px" alt="">
+    <div class="contenitore8">
+        <h1 class="font-figo centered"> Ecoo i Box a tua disposizione! </h1>
+        <div class="contenitore4">
+            <div class="contenitore7">
+                <img  src="../immagini/B/b1.png" height="400px" alt="">
+            </div>
+            <div class="contenitore7">
+                <img  src="../immagini/B/b2.png" height="400px" alt="">
+            </div>
+            <div class="contenitore7">
+                <img  src="../immagini/B/b3.png" height="400px" alt="">
+            </div>
+            <div class="contenitore7">
+                <img  src="../immagini/B/b4.png" height="400px" alt="">
+            </div>
+            <div class="contenitore7">
+                <img  src="../immagini/B/b5.png" height="400px" alt="">
+            </div>
+            <div class="contenitore7">
+                <img  src="../immagini/B/b6.png" height="400px" alt="">
+            </div>
+            <div class="contenitore7">
+                <img  src="../immagini/B/b7.png" height="400px" alt="">
+            </div>
+            <div class="contenitore7">
+                <img  src="../immagini/B/b8.png" height="400px" alt="">
+            </div>
         </div>
-        <div class="contenitore7">
-            <img  src="../immagini/B/b2.png" height="400px" alt="">
-        </div>
-        <div class="contenitore7">
-            <img  src="../immagini/B/b3.png" height="400px" alt="">
-        </div>
-        <div class="contenitore7">
-            <img  src="../immagini/B/b4.png" height="400px" alt="">
-        </div>
-        <div class="contenitore7">
-            <img  src="../immagini/B/b5.png" height="400px" alt="">
-        </div>
-        <div class="contenitore7">
-            <img  src="../immagini/B/b6.png" height="400px" alt="">
-        </div>
-        <div class="contenitore7">
-            <img  src="../immagini/B/b7.png" height="400px" alt="">
-        </div>
-        <div class="contenitore7">
-            <img  src="../immagini/B/b8.png" height="400px" alt="">
-        </div>
+    </div>
 </body>
 </html>

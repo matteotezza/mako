@@ -13,7 +13,7 @@
 <body>
 <div class="header">
         <div class="logo">
-            <img class="logo" src="../immagini/logopoke.png" width="200px" height="auto" alt="">
+            <a href="/index.php"><img class="logo" src="../immagini/logopoke.png" width="200px" height="auto" alt=""></a>
         </div>
         <ul class="menu">
             <li><a href="home_personale.php">Home</a></li>
@@ -30,7 +30,7 @@
             <span></span>
         </div>
     </div>
-    
+    <div class="contenitore8">
     <h1 class="font-figo centered"> Scegli l'espansione che più preferisci </h1>
     <div class="contenitore4">
         <div class="contenitore5">
@@ -70,6 +70,7 @@
             <img class="logo2" src="../immagini/fr-f.png" height="400px" alt="">
         </div>
 
+    </div>
     </div>
 </body>
 
