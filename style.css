@@ -153,6 +153,7 @@ form, form *{
 .contenitore3{
   text-align: center;
   display: flex;
+  margin-left: 5%;
 }
 
 .contenitore4 {
@@ -186,4 +187,19 @@ form, form *{
 }
 .contenitore8{
   margin-top: 80px;
+}
+.login.php font-figo{
+  margin: auto;
+}
+.scritta{
+  font-family: impact, fantasy;
+  color: grey;
+}
+.font-figo1{
+  font-size: 30px;
+  font-family: 'Pokemon Solid', sans-serif;
+  text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+  margin-top: 40px;
+  text-align: center;
+
 }

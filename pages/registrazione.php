@@ -17,11 +17,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 <div class="registrazione">
-        <h1>Registrazione</h1>
+        <h1 class="font-figo">Registrazione</h1>
         <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
             <table id="tab_dati_personali">
                 <tr>
@@ -67,20 +68,20 @@
         </form>
         <p>
             <?php
-            if(isset($_POST["username"]) and isset($_POST["password"])) {
-                if ($_POST["username"] == "" or $_POST["password"] == "") {
+            if(isset($_POST["nome_utente"]) and isset($_POST["password"])) {
+                if ($_POST["nome_utente"] == "" or $_POST["password"] == "") {
                     echo "inserire per favore username e password";
                 } elseif ($_POST["password"] != $_POST["conferma"]){
                     echo "Password errata";
                 } else {
-                    $conn = new mysqli("localhost", "root", "", "biblioteca");
+                    $conn = new mysqli("localhost", "root", "", "negozio_pokemon");
                     if($conn->connect_error){
                         die("<p>Connessione al server non riuscita: ".$conn->connect_error."</p>");
                     }
 
-                    $myquery = "SELECT username 
-						    FROM utenti 
-						    WHERE username='" . $_POST["username"] . "'";
+                    $myquery = "SELECT nome_utente 
+						    FROM cliente
+						    WHERE nome_utente='" . $_POST["nome_utente"] . "'";
                     
 
                     $ris = $conn->query($myquery) or die("<p>Query fallita!</p>");
@@ -88,18 +89,18 @@
                         echo "Questo username è già stato usato";
                     } else {
 
-                        $myquery = "INSERT INTO $tipologia (username, password, nome, cognome, email, telefono, comune, indirizzo)
-                                    VALUES ('$username', '$password', '$nome', '$cognome','$email','$telefono','$comune','$indirizzo')";
+                        $myquery = "INSERT INTO $negozio_pokemon (nome_utente, password, nome, cognome, email, telefono, comune, indirizzo)
+                                    VALUES ('$nome_utente', '$password', '$nome', '$cognome','$email','$telefono','$comune','$indirizzo')";
 
                         if ($conn->query($myquery) === true) {
                             session_start();
                             $_SESSION["username"]=$username;
-                            $_SESSION["tipologia"]=$_POST["tipologia"];
+                            
                             
 						    $conn->close();
 
                             echo "Registrazione effettuata con successo!<br>sarai ridirezionato alla home tra 5 secondi.";
-                            header('Refresh: 5; URL=home.php');
+                            header('Refresh: 5; URL=index.php');
 
                         } else {
                             echo "Non è stato possibile effettuare la registrazione per il seguente motivo: " . $conn->error;

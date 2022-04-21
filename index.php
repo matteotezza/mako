@@ -27,7 +27,7 @@
             <img class="logo" src="immagini/logopoke.png" width="200px" height="auto" alt="">
         </div>
         <ul class="menu">
-            <li><a href="home_personale.php">Home</a></li>
+            <li><a href="home.php">Home</a></li>
             <li><a href="carrello.php">Carrello</a></li>
             <li><a href="pages/registrazione.php">Registrazione</a></li>
             <li><a href="pages/login.php">Login</a></li>
@@ -70,19 +70,19 @@
             <a href="proclub.html" class="carousel-cell" id="set-fc"> </a>
         </div>
     </div>
-    <h1 class="font-figo"> Cosa cerchi? </h1>
+    <h1 class="font-figo1"> Cosa cerchi? </h1>
     <div class="contenitore3">
         <div class="box4">
-            <a href="pages/bustine.php"> <img class="logo" src="immagini/bustine-gds.png" height="400px" alt=""></a>
-            <p> Bustine </p>
+            <a href="pages/bustine.php"><img class="logo" src="immagini/bustine-gds.png" height="400px" alt=""></a>
+            <p class="scritta"> Bustine </p>
         </div>
         <div class="box5">
-        <a href="pages/bustine.php"><img class="logo" src="immagini/arceus-v.png" height="400px" alt="">
-            <p> Box </p>
+        <a href="pages/box.php"><img class="logo" src="immagini/B/b1.png" height="400px" alt=""></a>
+            <p  class="scritta"> Box </p>
         </div>
         <div class="box6">
-        <a href="pages/bustine.php"><img class="logo" src="immagini/boltund" height="400px" alt="">
-            <p> Carte singole </p>
+        <a href="pages/carte.php"><img class="logo" src="immagini/CS/carta_1.png" height="400px" alt=""></a>
+            <p  class="scritta"> Carte singole </p>
         </div>
 
 
