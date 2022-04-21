@@ -207,3 +207,37 @@ form, form *{
 .hidden{
   display: none;
 }
+.footerpagina
+{
+    background: #bfaa8c;
+    padding: 20px;
+    text-align: center;
+}
+
+.footerpagina p
+{
+    color: white;
+}
+
+hr
+{
+    color: white;
+}
+
+.medialinks ul 
+{
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.medialinks ul li 
+{
+    margin: 0 10px;
+    text-decoration: none;
+    list-style: none;
+    border: 2px solid white;
+    border-radius: 50%;
+
+}
+

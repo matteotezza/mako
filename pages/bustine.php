@@ -8,7 +8,7 @@ require('../data/db.php');
 // }
 
 $nome_utente = $_SESSION['nome_utente'];
-$conn = new mysqli($db_servername, $db_username, $db_password, $db_name);
+$conn = new mysqli($db_host, $db_username, $db_password, $db_name);
 
 if (isset($_POST["espansione"])) $espansione = $_POST["espansione"];
 else $espansione = "";
@@ -67,12 +67,12 @@ else $prezzo = "";
           <tr>
           <td> 
           
-          <div class="font2"> <br>' . $espansione . '          ' . $prezzo . ' €
+          <div class="font2"> <br>' . $espansione . ' ' . $prezzo . ' €
           </div>
           </td>
           <td>
-          <form action="' . $_SERVER['PHP_SELF'] . '" method="post">
-                        <input class="hidden" name="espansione" value=' . $espansione . ' ></input><input type="submit" value="buy">
+          <form action="' . $_SERVER['PHP_SELF'] . '?espansione='. $espansione .'" method="post">
+                        <input class="hidden" value=' . $espansione . ' ></input><input type="submit" name="espansione" value="Compra">
          </form>
           </td>
           </tr>
@@ -81,7 +81,22 @@ else $prezzo = "";
         </div>
         ';
             }
-            INSERT INTO 
+            if(isset($_POST["espansione"]) && !empty ($_POST['espansione']))
+            {
+            $tipo=urldecode($_GET["espansione"]);
+            $myquery = "SELECT prezzo
+            FROM bustina
+            WHERE espansione = '$tipo'";
+            $ris = $conn->query($myquery);
+            $tmp = $ris->fetch_assoc();
+            $prezzo = $tmp["prezzo"];
+            $myquery = "INSERT INTO carrello (prodotto, prezzo, nome_utente)
+            VALUES ('$tipo','$prezzo','$nome_utente')";
+            $conn->query('SET FOREIGN_KEY_CHECKS=0;');
+            $conn->query($myquery);
+
+            $conn->query('SET FOREIGN_KEY_CHECKS=1;');
+        }
             ?>
         </div>
 

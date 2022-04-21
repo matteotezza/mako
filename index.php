@@ -98,7 +98,21 @@
             });
         });
     </script>
-
+<footer>
+    <div class="footerpagina">
+      <div class="medialinks">
+        <ul>
+          <li><a href="https://it-it.facebook.com/gcaerialphotos/%22%3E<i class="fa fa-facebook"></i></a></li>
+          <li><a href="https://www.instagram.com/gcaerialphotos/%22%3E<i class="fa fa-instagram"></i></a></li>
+          <li><a href="https://www.youtube.com/channel/UCnqOV7ThDAUVk59U3zi1kmg%22%3E<i class="fa fa-youtube"></i></a></li>
+        </ul>
+      </div>
+      <br>
+      <hr>
+      <br>
+     <p>© 2021 Tezza All rights reserved.</p>
+ </div>
+</footer>
 </body>
 
 </html>
