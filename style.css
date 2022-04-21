@@ -161,6 +161,7 @@ form, form *{
   flex-wrap: wrap;
   width: 100%;
   position: relative;
+  margin-left: 10%;
 }
 
 .contenitore5 {
@@ -177,7 +178,7 @@ form, form *{
 
 .contenitore7 {
   width: 50%;
-  margin: auto;
+  margin-left: auto;
   position: relative;
 }
 

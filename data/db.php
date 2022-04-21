@@ -1,7 +1,7 @@
 <?php
 $dbusername ="root";
 $dbhost = "localhost";
-$dbname = ""; //il nome del tuo database
+$dbname = "negozio_pokemon"; 
 $dbpassword = "";
 
 ?>
