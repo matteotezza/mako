@@ -207,3 +207,23 @@ form, form *{
 .hidden{
   display: none;
 }
+
+.footer{
+  background-image: url('background.png');
+  background-repeat: repeat;
+  padding: 50px 0;
+}
+
+a{color: white;}
+.text-footer-nome{font-size: 30px; margin-left: 50px; font-weight: 400px;}
+.text-footer-cognome{font-size: 30px; margin-left: 50px; font-weight: 400px;}
+
+.grid{display: flex; max-width: 1350px; padding: 0 50px;margin: 0 auto;}
+.grid .col{width: 100%;}
+
+@media (max-width: 768px) {
+  .grid{flex-wrap: wrap}
+  .col{flex-wrap: wrap;}
+  .footer-a{padding-left: 50px;}
+  .text-footer-nome{margin-top: 50px;}
+}

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Box</title>
     <link rel="stylesheet" href="../style.css">
     <link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
 </head>
@@ -13,7 +13,7 @@
 <body>
 <div class="header">
         <div class="logo">
-            <img class="logo" src="../immagini/logopoke.png" width="200px" height="auto" alt="">
+            <a href="../index.php"><img class="logo" src="../immagini/logopoke.png" width="200px" height="auto" alt=""></a>
         </div>
         <ul class="menu">
             <li><a href="home.php">Home</a></li>
@@ -59,5 +59,21 @@
             </div>
         </div>
     </div>
+    <footer class="footer">
+    <div class="grid">
+      <div class="col reveal">
+        <p class="text-footer-nome font-figo1">Filippo Maconi</p>
+        <p class="text-footer-nome font-figo1">Instagram: filippo_maconi.</p>
+        <p class="text-footer-nome font-figo1">Telefono: 3926254418</p>
+      </div>
+
+      <div class="col reveal">
+        <p class="text-footer-nome font-figo1"> Matteo Tezza</p>
+        <p class="text-footer-nome font-figo1">Instagram: _tezzaa</p>
+        <p class="text-footer-nome font-figo1">Telefono: 3663557052</p>
+      </div>
+
+    </div>
+  </footer>
 </body>
 </html>

@@ -10,7 +10,7 @@
 <body>
 <div class="header">
         <div class="logo">
-            <a href="/index.php"><img class="logo" src="../immagini/logopoke.png" width="200px" height="auto" alt=""></a>
+            <a href="../index.php"><img class="logo" src="../immagini/logopoke.png" width="200px" height="auto" alt=""></a>
         </div>
         <ul class="menu">
             <li><a href="home.php">Home</a></li>
@@ -32,5 +32,22 @@
 
 
     </div>
+
+    <footer class="footer">
+    <div class="grid">
+      <div class="col reveal">
+        <p class="text-footer-nome font-figo1">Filippo Maconi</p>
+        <p class="text-footer-nome font-figo1">Instagram: filippo_maconi.</p>
+        <p class="text-footer-nome font-figo1">Telefono: 3926254418</p>
+      </div>
+
+      <div class="col reveal">
+        <p class="text-footer-nome font-figo1"> Matteo Tezza</p>
+        <p class="text-footer-nome font-figo1">Instagram: _tezzaa</p>
+        <p class="text-footer-nome font-figo1">Telefono: 3663557052</p>
+      </div>
+
+    </div>
+  </footer>
 </body>
 </html>

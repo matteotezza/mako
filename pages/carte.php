@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Carte Singole</title>
     <link rel="stylesheet" href="../style.css">
     <link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
 </head>
@@ -13,7 +13,7 @@
 <body>
 <div class="header">
         <div class="logo">
-            <a href="/index.php"><img class="logo" src="../immagini/logopoke.png" width="200px" height="auto" alt=""></a>
+            <a href="../index.php"><img class="logo" src="../immagini/logopoke.png" width="200px" height="auto" alt=""></a>
         </div>
         <ul class="menu">
             <li><a href="home.php">Home</a></li>
@@ -31,7 +31,7 @@
         </div>
     </div>
     <div class="contenitore8">
-    <h1 class="font-figo centered"> Qui trovi la selezione delle carte singole, con l'espansione in cui puoi trovarle</h1>
+    <h1 class="font-figo centered"> Qui trovi la selezione delle carte singole</h1>
     <div class="contenitore4">
         <div class="contenitore6">
             <img  src="../immagini/CS/carta_1.png" height="400px" alt="">
@@ -150,10 +150,25 @@
             <img  src="../immagini/CS/carta_35.png" height="400px" alt="">
         </div>
         <div class="contenitore6">
-            <img  src="../immagini/CS/carta36.png" height="400px" alt="">
+            <img  src="../immagini/CS/carta_36.png" height="400px" alt="">
         </div>
     </div>
     </div>
-    
+    <footer class="footer">
+    <div class="grid">
+      <div class="col reveal">
+        <p class="text-footer-nome font-figo1">Filippo Maconi</p>
+        <p class="text-footer-nome font-figo1">Instagram: filippo_maconi.</p>
+        <p class="text-footer-nome font-figo1">Telefono: 3926254418</p>
+      </div>
+
+      <div class="col reveal">
+        <p class="text-footer-nome font-figo1"> Matteo Tezza</p>
+        <p class="text-footer-nome font-figo1">Instagram: _tezzaa</p>
+        <p class="text-footer-nome font-figo1">Telefono: 3663557052</p>
+      </div>
+
+    </div>
+  </footer>
 </body>
 </html>
