@@ -1,4 +1,24 @@
 <?php
+session_start();
+	
+require('../data/db.php');
+echo session_id();
+
+error_reporting(E_ALL ^ E_WARNING); 
+
+if(isset($_POST["nome_utente"])){
+	$nome_utente = $_POST["nome_utente"];
+}
+else{
+	$nome_utente = "";
+}
+
+if (isset($_POST["password"])){
+	$password = $_POST["password"];
+}
+else {
+	$password = "";
+}
 			if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				if( empty($_POST["nome_utente"]) or empty($_POST["password"])) {
 					echo "<p> Inserire username e password </p>";
@@ -10,8 +30,8 @@
 					echo "connessione al server riuscita";
 					
 					$myquery = "SELECT nome_utente, password 
-								FROM $negozio_pokemon
-								WHERE nome_utente='$nome_utente'
+								FROM cliente
+								WHERE nome_utente='$_POST[nome_utente]'
 									AND password='$password'";
 
 					$ris = $conn->query($myquery) or die("<p>Query fallita! ".$conn->error."</p>");
@@ -24,16 +44,13 @@
 						$_SESSION["nome_utente"]=$nome_utente;
 												
 						$conn->close();
-						header("location: pagine/index.php");
+						header("location: ../index.php");
 
 					}
 				}
 			}
                     ?>
-                    </div>
-                    <?php 
-		include('pagine/footer.php')
-	?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -49,7 +66,7 @@
     <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
     <table class="tabella_login">
         <tr>
-            <td>Username</td><td><input type="text" name="username" value="<?php echo $username; ?>" required></td>
+            <td>Username</td><td><input type="text" name="nome_utente" value="<?php echo $nome_utente; ?>" required></td>
         </tr>
         <tr>
             <td>Password</td><td><input type="password" name="password" value="<?php /*echo $password; */?>" required></td>

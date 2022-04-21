@@ -1,5 +1,5 @@
 <?php
     session_start();
-    if(isset($_SESSION['username'])) $username = $_SESSION['username'];
-    else $username = "";
+    if(isset($_SESSION['nome_utente'])) $nome_utente = $_SESSION['nome_utente'];
+    else $nome_utente = "";
 ?>

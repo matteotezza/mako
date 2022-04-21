@@ -1,3 +1,21 @@
+<?php
+session_start();
+
+require('../data/db.php');
+
+// if (!isset($_SESSION['username'])) {
+//     header('location: ../account.php');
+// }
+
+$nome_utente = $_SESSION['nome_utente'];
+$conn = new mysqli($db_servername, $db_username, $db_password, $db_name);
+
+if (isset($_POST["espansione"])) $espansione = $_POST["espansione"];
+else $espansione = "";
+if (isset($_POST["prezzo"])) $prezzo = $_POST["prezzo"];
+else $prezzo = "";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,15 +23,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bustine</title>
     <link rel="stylesheet" href="../style.css">
     <link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
 </head>
 
 <body>
-<div class="header">
+    <div class="header">
         <div class="logo">
-            <a href="/index.php"><img class="logo" src="../immagini/logopoke.png" width="200px" height="auto" alt=""></a>
+            <a href="../index.php"><img class="logo" src="../immagini/logopoke.png" width="200px" height="auto" alt=""></a>
         </div>
         <ul class="menu">
             <li><a href="home.php">Home</a></li>
@@ -31,47 +49,44 @@
         </div>
     </div>
     <div class="contenitore8">
-    <h1 class="font-figo centered"> Scegli l'espansione che più preferisci </h1>
-    <div class="contenitore4">
+        <h1 class="font-figo centered"> Scegli l'espansione che più preferisci </h1>
+        <div class="contenitore4">
+            <?php
+            $sql = "SELECT *
+                    FROM bustina";
+            $ris = $conn->query($sql);
+            while ($row = $ris->fetch_assoc()) {
+                $espansione = $row['espansione'];
+                $prezzo = $row['prezzo'];
+                echo '
+                
+
         <div class="contenitore5">
-            <img class="logo2" src="../immagini/ec-f.png" height="400px" alt="">
+            <img class="logo2" src="../immagini/' . $espansione . '.png" height="400px" alt="">
+          <table>
+          <tr>
+          <td> 
+          
+          <div class="font2"> <br>' . $espansione . '          ' . $prezzo . ' €
+          </div>
+          </td>
+          <td>
+          <form action="' . $_SERVER['PHP_SELF'] . '" method="post">
+                        <input class="hidden" name="espansione" value=' . $espansione . ' ></input><input type="submit" value="buy">
+         </form>
+          </td>
+          </tr>
+          </table>
+
         </div>
-        <div class="contenitore5">
-            <img class="logo2" src="../immagini/li-f.png" height="400px" alt="">
-        </div>
-        <div class="contenitore5">
-            <img class="logo2" src="../immagini/vs-f.png" height="400px" alt="">
-        </div>
-        <div class="contenitore5">
-            <img class="logo2" src="../immagini/sdl-f.png" height="400px" alt="">
-        </div>
-        <div class="contenitore5">
-            <img class="logo2" src="../immagini/e-f.png" height="400px" alt="">
-        </div>
-        <div class="contenitore5">
-            <img class="logo2" src="../immagini/j-f.png" height="400px" alt="">
-        </div>
-        <div class="contenitore5">
-            <img class="logo2" src="../immagini/fc-f.png" height="400px" alt="">
-        </div>
-        <div class="contenitore5">
-            <img class="logo2" src="../immagini/al-f.png" height="400px" alt="">
-        </div>
-        <div class="contenitore5">
-            <img class="logo2" src="../immagini/rg-f.png" height="400px" alt="">
-        </div>
-        <div class="contenitore5">
-            <img class="logo2" src="../immagini/fo-f.png" height="400px" alt="">
-        </div>
-        <div class="contenitore5">
-            <img class="logo2" src="../immagini/cf-f.png" height="400px" alt="">
-        </div>
-        <div class="contenitore5">
-            <img class="logo2" src="../immagini/fr-f.png" height="400px" alt="">
+        ';
+            }
+            INSERT INTO 
+            ?>
         </div>
 
     </div>
-    </div>
+
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 <?php 
-    if(isset($_POST["username"])) $username = $_POST["username"];  else $username = "";
+    if(isset($_POST["nome_utente"])) $nome_utente = $_POST["nome_utente"];  else $nome_utente = "";
     if(isset($_POST["password"])) $password = $_POST["password"];  else $password = "";
     if(isset($_POST["conferma"])) $conferma = $_POST["conferma"];  else $conferma = "";
     if(isset($_POST["nome"])) $nome = $_POST["nome"];  else $nome = "";
@@ -27,7 +27,7 @@
             <table id="tab_dati_personali">
                 <tr>
                     <td>Username:</td>
-                    <td><input class="input_dati_personali" type="text" name="username" <?php echo "value = '$username'" ?> required></td>
+                    <td><input class="input_dati_personali" type="text" name="nome_utente" <?php echo "value = '$nome_utente'" ?> required></td>
                 </tr>
                 <tr>
                     <td>Password:</td>
@@ -89,18 +89,18 @@
                         echo "Questo username è già stato usato";
                     } else {
 
-                        $myquery = "INSERT INTO $negozio_pokemon (nome_utente, password, nome, cognome, email, telefono, comune, indirizzo)
+                        $myquery = "INSERT INTO cliente (nome_utente, password, nome, cognome, email, telefono, comune, indirizzo)
                                     VALUES ('$nome_utente', '$password', '$nome', '$cognome','$email','$telefono','$comune','$indirizzo')";
 
                         if ($conn->query($myquery) === true) {
                             session_start();
-                            $_SESSION["username"]=$username;
+                            $_SESSION["nome_utente"]=$nome_utente;
                             
                             
 						    $conn->close();
 
                             echo "Registrazione effettuata con successo!<br>sarai ridirezionato alla home tra 5 secondi.";
-                            header('Refresh: 5; URL=index.php');
+                            header('Refresh: 5; URL=../index.php');
 
                         } else {
                             echo "Non è stato possibile effettuare la registrazione per il seguente motivo: " . $conn->error;
