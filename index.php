@@ -27,8 +27,8 @@
             <img class="logo" src="immagini/logopoke.png" width="200px" height="auto" alt="">
         </div>
         <ul class="menu">
-            <li><a href="home.php">Home</a></li>
-            <li><a href="carrello.php">Carrello</a></li>
+            <li><a href="pages/home.php">Home</a></li>
+            <li><a href="pages/carrello.php">Carrello</a></li>
             <li><a href="pages/registrazione.php">Registrazione</a></li>
             <li><a href="pages/login.php">Login</a></li>
         </ul>
@@ -73,7 +73,7 @@
     <h1 class="font-figo1"> Cosa cerchi? </h1>
     <div class="contenitore3">
         <div class="box4">
-            <a href="pages/bustine.php"><img class="logo" src="immagini/bustine-gds.png" height="400px" alt=""></a>
+        <a href="pages/bustine.php"><img class="logo" src="immagini/bustine-gds.png" height="400px" alt=""></a>
             <p class="scritta"> Bustine </p>
         </div>
         <div class="box5">
@@ -87,6 +87,23 @@
 
 
     </div>
+
+    <footer class="footer">
+    <div class="grid">
+      <div class="col reveal">
+        <p class="text-footer-nome font-figo1">Filippo Maconi</p>
+        <p class="text-footer-nome font-figo1">Instagram: filippo_maconi.</p>
+        <p class="text-footer-nome font-figo1">Telefono: 3926254418</p>
+      </div>
+
+      <div class="col reveal">
+        <p class="text-footer-nome font-figo1"> Matteo Tezza</p>
+        <p class="text-footer-nome font-figo1">Instagram: _tezzaa</p>
+        <p class="text-footer-nome font-figo1">Telefono: 3663557052</p>
+      </div>
+
+    </div>
+  </footer>
 
     <!-- Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js" integrity="sha512-cA8gcgtYJ+JYqUe+j2JXl6J3jbamcMQfPe0JOmQGDescd+zqXwwgneDzniOd3k8PcO7EtTW6jA7L4Bhx03SXoA==" crossorigin="anonymous"></script>
