@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Versione server:              10.4.21-MariaDB - mariadb.org binary distribution
+-- Versione server:              10.4.24-MariaDB - mariadb.org binary distribution
 -- S.O. server:                  Win64
 -- HeidiSQL Versione:            11.3.0.6295
 -- --------------------------------------------------------
@@ -17,17 +17,17 @@
 CREATE DATABASE IF NOT EXISTS `negozio_pokemon` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
 USE `negozio_pokemon`;
 
--- Dump della struttura di tabella negozio_pokemon.box
-CREATE TABLE IF NOT EXISTS `box` (
+-- Dump della struttura di tabella negozio_pokemon.boxx
+CREATE TABLE IF NOT EXISTS `boxx` (
   `carta_promo` char(50) DEFAULT NULL,
   `codice_box` char(50) NOT NULL,
   `prezzo` float DEFAULT NULL,
   PRIMARY KEY (`codice_box`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dump dei dati della tabella negozio_pokemon.box: ~2 rows (circa)
-/*!40000 ALTER TABLE `box` DISABLE KEYS */;
-INSERT INTO `box` (`carta_promo`, `codice_box`, `prezzo`) VALUES
+-- Dump dei dati della tabella negozio_pokemon.boxx: ~8 rows (circa)
+/*!40000 ALTER TABLE `boxx` DISABLE KEYS */;
+INSERT INTO `boxx` (`carta_promo`, `codice_box`, `prezzo`) VALUES
 	(NULL, 'Astri Lucenti (set allenatore fuoriclasse)', 45),
 	('Copperajah V', 'Collezione Copperajah V', 25),
 	('Kangaskhan GX', 'Collezione Kangaskhan GX', 20),
@@ -36,7 +36,7 @@ INSERT INTO `box` (`carta_promo`, `codice_box`, `prezzo`) VALUES
 	('Drednaw', 'Futuri Campioni (palestra di Heelford)', 25),
 	(NULL, 'Ombre Infuocate', 500),
 	(NULL, 'Sole e Luna', 200);
-/*!40000 ALTER TABLE `box` ENABLE KEYS */;
+/*!40000 ALTER TABLE `boxx` ENABLE KEYS */;
 
 -- Dump della struttura di tabella negozio_pokemon.bustina
 CREATE TABLE IF NOT EXISTS `bustina` (
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `bustina` (
   KEY `espansione` (`espansione`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dump dei dati della tabella negozio_pokemon.bustina: ~14 rows (circa)
+-- Dump dei dati della tabella negozio_pokemon.bustina: ~12 rows (circa)
 /*!40000 ALTER TABLE `bustina` DISABLE KEYS */;
 INSERT INTO `bustina` (`espansione`, `prezzo`) VALUES
 	('Astri Lucenti', 5.5),
@@ -63,11 +63,51 @@ INSERT INTO `bustina` (`espansione`, `prezzo`) VALUES
 	('Voltaggio Sfolgorante', 5.5);
 /*!40000 ALTER TABLE `bustina` ENABLE KEYS */;
 
+-- Dump della struttura di tabella negozio_pokemon.carrello
+CREATE TABLE IF NOT EXISTS `carrello` (
+  `prodotto` char(50) NOT NULL DEFAULT '',
+  `prezzo` float DEFAULT NULL,
+  `nome_utente` char(50) NOT NULL DEFAULT '',
+  KEY `prodotto` (`prodotto`),
+  KEY `FK_carrello_cliente` (`nome_utente`),
+  CONSTRAINT `FK_carrello_box` FOREIGN KEY (`prodotto`) REFERENCES `boxx` (`codice_box`) ON UPDATE CASCADE,
+  CONSTRAINT `FK_carrello_bustina` FOREIGN KEY (`prodotto`) REFERENCES `bustina` (`espansione`) ON UPDATE CASCADE,
+  CONSTRAINT `FK_carrello_carta` FOREIGN KEY (`prodotto`) REFERENCES `carta` (`codice_carta`) ON UPDATE CASCADE,
+  CONSTRAINT `FK_carrello_cliente` FOREIGN KEY (`nome_utente`) REFERENCES `cliente` (`nome_utente`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Dump dei dati della tabella negozio_pokemon.carrello: ~22 rows (circa)
+/*!40000 ALTER TABLE `carrello` DISABLE KEYS */;
+INSERT INTO `carrello` (`prodotto`, `prezzo`, `nome_utente`) VALUES
+	('Invia', 5.5, 'maconifrocio'),
+	('Invia', 5.5, 'maconifrocio'),
+	('Compra', 5.5, 'maconifrocio'),
+	('Voltaggio Sfolgorante', 5.5, 'maconifrocio'),
+	('Voltaggio Sfolgorante', 5.5, 'maconifrocio'),
+	('Voltaggio Sfolgorante', 5.5, 'maconifrocio'),
+	('', 5.5, 'maconifrocio'),
+	('', 5.5, 'maconifrocio'),
+	('', 5.5, 'maconifrocio'),
+	('Regno Glaciale', 5.5, 'maconifrocio'),
+	('Regno Glaciale', 5.5, 'maconifrocio'),
+	('Set Jungle', 5.5, 'maconifrocio'),
+	('Eclissi Cosmica', 5.5, 'maconifrocio'),
+	('Evoluzioni', 5.5, 'maconifrocio'),
+	('Evoluzioni', 5.5, 'maconifrocio'),
+	('Evoluzioni', 0, 'maconifrocio'),
+	('Evoluzioni', 6, 'maconifrocio'),
+	('Set Jungle', 15, 'maconifrocio'),
+	('Evoluzioni', 6, 'maconifrocio'),
+	('Futuri Campioni', 6, 'maconifrocio'),
+	('Colpo Fusione', 5.5, 'maconifrocio'),
+	('Evoluzioni', 6, 'maconifrocio');
+/*!40000 ALTER TABLE `carrello` ENABLE KEYS */;
+
 -- Dump della struttura di tabella negozio_pokemon.carta
 CREATE TABLE IF NOT EXISTS `carta` (
   `nome_carta` char(50) DEFAULT NULL,
   `espansione` char(50) DEFAULT NULL,
-  `codice_carta` int(11) NOT NULL,
+  `codice_carta` char(50) NOT NULL DEFAULT '',
   `prezzo` float DEFAULT NULL,
   PRIMARY KEY (`codice_carta`),
   KEY `espansione` (`espansione`),
@@ -77,66 +117,63 @@ CREATE TABLE IF NOT EXISTS `carta` (
 -- Dump dei dati della tabella negozio_pokemon.carta: ~36 rows (circa)
 /*!40000 ALTER TABLE `carta` DISABLE KEYS */;
 INSERT INTO `carta` (`nome_carta`, `espansione`, `codice_carta`, `prezzo`) VALUES
-	('Flareon', 'Set Jungle', 3, 20),
-	('Vaporeon', 'Set Jungle', 12, 8),
-	('Orbeetle Vmax', 'Voltaggio Sfolgorante', 21, 2),
-	('Mega Blastoise Ex', 'Evoluzioni', 22, 5),
-	('Pikachu', 'Set Jungle', 60, 1),
-	('Charizard Vmax', 'Futuri Campioni', 74, 200),
-	('Kabu', 'Futuri Campioni', 77, 5),
-	('Charizard V', 'Futuri Campioni', 79, 190),
-	('Urshifu singolocolpo Vmax', 'Stili di Lotta', 86, 4),
-	('Urshifu pluricolpo Vmax', 'Stili di Lotta', 88, 4),
-	('Mega Charizard Ex', 'Evoluzioni', 101, 30),
-	('Determinazione di Misty', 'Evoluzioni', 108, 12),
-	('Grimmsnarl Vmax', 'Fiamme Oscure', 115, 2.5),
-	('Zamazenta V', 'Astri Lucenti', 163, 5),
-	('Bruno', 'Stili di Lotta', 172, 9),
-	('Ambizione di Camilla', 'Astri Lucenti', 178, 8.5),
-	('Inteleon V', 'Fragore Ribelle', 180, 5),
-	('Azzurra', 'Voltaggio Sfolgorante', 183, 10),
-	('Arceus V Astro', 'Astri Lucenti', 184, 40),
-	('Pikachu Vmax', 'Voltaggio Sfolgorante', 188, 50),
-	('Eternatus Vmax', 'Fiamme Oscure', 192, 22),
-	('Distintivo Turbo', 'Fiamme Oscure', 200, 6),
-	('Calyrex Cavaliere Glaciale Vmax', 'Regno Glaciale', 202, 17.5),
-	('Sonia', 'Fragore Ribelle', 203, 15),
-	('Calyrex Cavaliere Spettrale Vmax', 'Regno Glaciale', 204, 14.5),
-	('Amuleto Grande', 'Fragore Ribelle', 206, 7),
-	('Saldatrice', 'Legami Inossidabili', 214, 17.5),
-	('Reshiram e Charizard GX', 'Legami Inossidabili', 217, 90),
-	('Cristallo di Bruma', 'Regno Glaciale', 227, 12),
-	('Cristallo di Fuoco', 'Legami Inossidabili', 231, 8.5),
-	('Solgaleo e Lunala GX', 'Eclissi Cosmica', 254, 30),
-	('Reshiram e Zekrom GX', 'Eclissi Cosmica', 259, 35),
-	('Mew Vmax', 'Colpo Fusione', 268, 57.5),
-	('Energia Pesca', 'Eclissi Cosmica', 271, 7.5),
-	('Chicco, Spighetto e Maisello', 'Colpo Fusione', 273, 10),
-	('Fosco', 'Colpo Fusione', 279, 10);
+	('Mega Charizard Ex', 'Evoluzioni', '101', 30),
+	('Determinazione di Misty', 'Evoluzioni', '108', 12),
+	('Grimmsnarl Vmax', 'Fiamme Oscure', '115', 2.5),
+	('Vaporeon', 'Set Jungle', '12', 8),
+	('Zamazenta V', 'Astri Lucenti', '163', 5),
+	('Bruno', 'Stili di Lotta', '172', 9),
+	('Ambizione di Camilla', 'Astri Lucenti', '178', 8.5),
+	('Inteleon V', 'Fragore Ribelle', '180', 5),
+	('Azzurra', 'Voltaggio Sfolgorante', '183', 10),
+	('Arceus V Astro', 'Astri Lucenti', '184', 40),
+	('Pikachu Vmax', 'Voltaggio Sfolgorante', '188', 50),
+	('Eternatus Vmax', 'Fiamme Oscure', '192', 22),
+	('Distintivo Turbo', 'Fiamme Oscure', '200', 6),
+	('Calyrex Cavaliere Glaciale Vmax', 'Regno Glaciale', '202', 17.5),
+	('Sonia', 'Fragore Ribelle', '203', 15),
+	('Calyrex Cavaliere Spettrale Vmax', 'Regno Glaciale', '204', 14.5),
+	('Amuleto Grande', 'Fragore Ribelle', '206', 7),
+	('Orbeetle Vmax', 'Voltaggio Sfolgorante', '21', 2),
+	('Saldatrice', 'Legami Inossidabili', '214', 17.5),
+	('Reshiram e Charizard GX', 'Legami Inossidabili', '217', 90),
+	('Mega Blastoise Ex', 'Evoluzioni', '22', 5),
+	('Cristallo di Bruma', 'Regno Glaciale', '227', 12),
+	('Cristallo di Fuoco', 'Legami Inossidabili', '231', 8.5),
+	('Solgaleo e Lunala GX', 'Eclissi Cosmica', '254', 30),
+	('Reshiram e Zekrom GX', 'Eclissi Cosmica', '259', 35),
+	('Mew Vmax', 'Colpo Fusione', '268', 57.5),
+	('Energia Pesca', 'Eclissi Cosmica', '271', 7.5),
+	('Chicco, Spighetto e Maisello', 'Colpo Fusione', '273', 10),
+	('Fosco', 'Colpo Fusione', '279', 10),
+	('Flareon', 'Set Jungle', '3', 20),
+	('Pikachu', 'Set Jungle', '60', 1),
+	('Charizard Vmax', 'Futuri Campioni', '74', 200),
+	('Kabu', 'Futuri Campioni', '77', 5),
+	('Charizard V', 'Futuri Campioni', '79', 190),
+	('Urshifu singolcolpo Vmax', 'Stili di Lotta', '86', 4),
+	('Urshifu pluricolpo Vmax', 'Stili di Lotta', '88', 4);
 /*!40000 ALTER TABLE `carta` ENABLE KEYS */;
 
 -- Dump della struttura di tabella negozio_pokemon.cliente
 CREATE TABLE IF NOT EXISTS `cliente` (
-  `nome_utente` char(50) DEFAULT NULL,
-  `password` char(50) DEFAULT NULL,
+  `nome_utente` char(50) NOT NULL,
+  `password` char(50) NOT NULL,
   `nome` char(50) DEFAULT NULL,
   `cognome` char(50) DEFAULT NULL,
   `email` char(50) DEFAULT NULL,
   `telefono` char(50) DEFAULT NULL,
   `comune` char(50) DEFAULT NULL,
-  `indirizzo` char(50) DEFAULT NULL
+  `indirizzo` char(50) DEFAULT NULL,
+  PRIMARY KEY (`nome_utente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dump dei dati della tabella negozio_pokemon.cliente: ~7 rows (circa)
+-- Dump dei dati della tabella negozio_pokemon.cliente: ~2 rows (circa)
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
 INSERT INTO `cliente` (`nome_utente`, `password`, `nome`, `cognome`, `email`, `telefono`, `comune`, `indirizzo`) VALUES
-	('', '', NULL, NULL, NULL, NULL, NULL, NULL),
-	('', '', NULL, NULL, NULL, NULL, NULL, NULL),
-	('', '', NULL, NULL, NULL, NULL, NULL, NULL),
-	('', '', NULL, NULL, NULL, NULL, NULL, NULL),
-	('', '', NULL, NULL, NULL, NULL, NULL, NULL),
-	('', '', NULL, NULL, NULL, NULL, NULL, NULL),
-	('', '', NULL, NULL, NULL, NULL, NULL, NULL);
+	('maconifrocio', 'leccapalle', 'Filip', 'Mako', 'leccolepallesudate@gmail.com', '111111111', 'stocazzo', 'via dalle palle'),
+	('matteotezza0', 'Matteo', 'Matteo', 'Tezza', 'matteotezza8@gmail.com', '3663557052', 'Arcore', 'Filzi'),
+	('matteotezza8', 'Matteo', 'Matteo', 'Tezza', 'matteotezza8@gmail.com', '3663557052', 'Arcore', 'Filzi');
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 
 -- Dump della struttura di tabella negozio_pokemon.fornitore
@@ -161,23 +198,6 @@ CREATE TABLE IF NOT EXISTS `negozio` (
 -- Dump dei dati della tabella negozio_pokemon.negozio: ~0 rows (circa)
 /*!40000 ALTER TABLE `negozio` DISABLE KEYS */;
 /*!40000 ALTER TABLE `negozio` ENABLE KEYS */;
-
--- Dump della struttura di tabella negozio_pokemon.prodotto
-CREATE TABLE IF NOT EXISTS `prodotto` (
-  `box` char(50) NOT NULL,
-  `bustine` char(50) NOT NULL,
-  `carte_singole` int(11) NOT NULL DEFAULT 0,
-  KEY `FK_prodotto_box` (`box`),
-  KEY `FK_prodotto_bustina` (`bustine`),
-  KEY `FK_prodotto_carta` (`carte_singole`),
-  CONSTRAINT `FK_prodotto_box` FOREIGN KEY (`box`) REFERENCES `box` (`codice_box`) ON UPDATE CASCADE,
-  CONSTRAINT `FK_prodotto_bustina` FOREIGN KEY (`bustine`) REFERENCES `bustina` (`espansione`) ON UPDATE CASCADE,
-  CONSTRAINT `FK_prodotto_carta` FOREIGN KEY (`carte_singole`) REFERENCES `carta` (`codice_carta`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- Dump dei dati della tabella negozio_pokemon.prodotto: ~0 rows (circa)
-/*!40000 ALTER TABLE `prodotto` DISABLE KEYS */;
-/*!40000 ALTER TABLE `prodotto` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;

@@ -87,6 +87,7 @@
                     $ris = $conn->query($myquery) or die("<p>Query fallita!</p>");
                     if ($ris->num_rows > 0) {
                         echo "Questo username è già stato usato";
+                        header('Refresh: 2; URL=../index.php');
                     } else {
 
                         $myquery = "INSERT INTO cliente (nome_utente, password, nome, cognome, email, telefono, comune, indirizzo)

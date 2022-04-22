@@ -38,6 +38,7 @@ else $prezzo = "";
             <li><a href="carrello.php">Carrello</a></li>
             <li><a href="registrazione.php">Registrazione</a></li>
             <li><a href="login.php">Login</a></li>
+            <li><a href="logout.php">Logout</a></li>
         </ul>
         <div class="cta">
             <a href="founders.html" class="button"><img class="logo" src="immagini/founders.png" height="40px" alt=""></a>
@@ -65,16 +66,15 @@ else $prezzo = "";
             <img class="logo2" src="../immagini/' . $espansione . '.png" height="400px" alt="">
           <table>
           <tr>
-          <td> 
-          
-          <div class="font2"> <br>' . $espansione . ' ' . $prezzo . ' €
-          </div>
-          </td>
           <td>
           <form action="' . $_SERVER['PHP_SELF'] . '?espansione='. $espansione .'" method="post">
                         <input class="hidden" value=' . $espansione . ' ></input><input type="submit" name="espansione" value="Compra">
          </form>
           </td>
+          <div class="font2"> <br>' . $espansione . ' ' . $prezzo . ' €
+          </div>
+          </td>
+          
           </tr>
           </table>
 
@@ -101,22 +101,13 @@ else $prezzo = "";
         </div>
 
     </div>
-    <footer class="footer">
-    <div class="grid">
-      <div class="col reveal">
-        <p class="text-footer-nome font-figo1">Filippo Maconi</p>
-        <p class="text-footer-nome font-figo1">Instagram: filippo_maconi.</p>
-        <p class="text-footer-nome font-figo1">Telefono: 3926254418</p>
-      </div>
-
-      <div class="col reveal">
-        <p class="text-footer-nome font-figo1"> Matteo Tezza</p>
-        <p class="text-footer-nome font-figo1">Instagram: _tezzaa</p>
-        <p class="text-footer-nome font-figo1">Telefono: 3663557052</p>
-      </div>
-
-    </div>
-  </footer>
+    <footer>
+    <div class="footerpagina">
+      <br>
+      <br>
+     <p>© 2021 Tezza and Maconi Filippo - All rights reserved.</p>
+ </div>
+</footer>
 </body>
 
 </html>

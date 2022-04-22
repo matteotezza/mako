@@ -1,3 +1,21 @@
+<?php
+session_start();
+
+require('../data/db.php');
+
+// if (!isset($_SESSION['username'])) {
+//     header('location: ../account.php');
+// }
+
+$nome_utente = $_SESSION['nome_utente'];
+$conn = new mysqli($db_host, $db_username, $db_password, $db_name);
+
+if (isset($_POST["espansione"])) $espansione = $_POST["espansione"];
+else $espansione = "";
+if (isset($_POST["prezzo"])) $prezzo = $_POST["prezzo"];
+else $prezzo = "";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,6 +38,7 @@
             <li><a href="carrello.php">Carrello</a></li>
             <li><a href="registrazione.php">Registrazione</a></li>
             <li><a href="login.php">Login</a></li>
+            <li><a href="logout.php">Logout</a></li>
         </ul>
         <div class="cta">
             <a href="founders.html" class="button"><img class="logo" src="immagini/founders.png" height="40px" alt=""></a>
@@ -33,142 +52,60 @@
     <div class="contenitore8">
     <h1 class="font-figo centered"> Qui trovi la selezione delle carte singole</h1>
     <div class="contenitore4">
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_1.png" height="400px" alt="">
-        </div>
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_2.png" height="400px" alt="">
-        </div>
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_3.png" height="400px" alt="">
-        </div>
-        
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_4.png" height="400px" alt="">
-        </div>
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_5.png" height="400px" alt="">
-        </div>
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_6.png" height="400px" alt="">
-        </div>
-        
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_7.png" height="400px" alt="">
-        </div>
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_8.png" height="400px" alt="">
-        </div>
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_9.png" height="400px" alt="">
-        </div>
-        
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_10.png" height="400px" alt="">
-        </div>
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_11.png" height="400px" alt="">
-        </div>
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_12.png" height="400px" alt="">
-        </div>
-        
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_13.png" height="400px" alt="">
-        </div>
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_14.png" height="400px" alt="">
-        </div>
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_15.png" height="400px" alt="">
-        </div>
-        
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_16.png" height="400px" alt="">
-        </div>
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_17.png" height="400px" alt="">
-        </div>
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_18.png" height="400px" alt="">
-        </div>
-        
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_19.png" height="400px" alt="">
-        </div>
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_20.png" height="400px" alt="">
-        </div>
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_21.png" height="400px" alt="">
-        </div>
-        
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_22.png" height="400px" alt="">
-        </div>
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_23.png" height="400px" alt="">
-        </div>
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_24.png" height="400px" alt="">
-        </div>
-        
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_25.png" height="400px" alt="">
-        </div>
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_26.png" height="400px" alt="">
-        </div>
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_27.png" height="400px" alt="">
-        </div>
-        
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_28.png" height="400px" alt="">
-        </div>
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_29.png" height="400px" alt="">
-        </div>
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_30.png" height="400px" alt="">
-        </div>
-        
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_31.png" height="400px" alt="">
-        </div>
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_32.png" height="400px" alt="">
-        </div>
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_33.png" height="400px" alt="">
-        </div>
-        
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_34.png" height="400px" alt="">
-        </div>
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_35.png" height="400px" alt="">
-        </div>
-        <div class="contenitore6">
-            <img  src="../immagini/CS/carta_36.png" height="400px" alt="">
-        </div>
-    </div>
-    </div>
-    <footer class="footer">
-    <div class="grid">
-      <div class="col reveal">
-        <p class="text-footer-nome font-figo1">Filippo Maconi</p>
-        <p class="text-footer-nome font-figo1">Instagram: filippo_maconi.</p>
-        <p class="text-footer-nome font-figo1">Telefono: 3926254418</p>
-      </div>
+    <?php
+            $sql = "SELECT *
+                    FROM carta";
+            $ris = $conn->query($sql);
+            while ($row = $ris->fetch_assoc()) {
+                $espansione = $row['nome_carta'];
+                $prezzo = $row['prezzo'];
+                echo '
+                
 
-      <div class="col reveal">
-        <p class="text-footer-nome font-figo1"> Matteo Tezza</p>
-        <p class="text-footer-nome font-figo1">Instagram: _tezzaa</p>
-        <p class="text-footer-nome font-figo1">Telefono: 3663557052</p>
-      </div>
+        <div class="contenitore6">
+            <img class="logo2" src="../immagini/' . $espansione . '.png" height="400px" alt="">
+          <table>
+          <tr>
+          <td>
+          <form action="' . $_SERVER['PHP_SELF'] . '?espansione='. $espansione .'" method="post">
+                        <input class="hidden" value=' . $espansione . ' ></input><input type="submit" name="espansione" value="Compra">
+         </form>
+          </td>
+        
+          <div class="font2"> <br>' . $espansione . ' ' . $prezzo . ' €
+          </div>
+        
+          </tr>
+          </table>
 
+        </div>
+        ';
+            }
+            if(isset($_POST["espansione"]) && !empty ($_POST['espansione']))
+            {
+            $tipo=urldecode($_GET["espansione"]);
+            $myquery = "SELECT prezzo
+            FROM bustina
+            WHERE espansione = '$tipo'";
+            $ris = $conn->query($myquery);
+            $tmp = $ris->fetch_assoc();
+            $prezzo = $tmp["prezzo"];
+            $myquery = "INSERT INTO carrello (prodotto, prezzo, nome_utente)
+            VALUES ('$tipo','$prezzo','$nome_utente')";
+            $conn->query('SET FOREIGN_KEY_CHECKS=0;');
+            $conn->query($myquery);
+
+            $conn->query('SET FOREIGN_KEY_CHECKS=1;');
+        }
+            ?>
     </div>
-  </footer>
+    </div>
+    <footer>
+    <div class="footerpagina">
+      <br>
+      <br>
+     <p>© 2021 Tezza Matteo and Maconi Filippo - All rights reserved.</p>
+ </div>
+</footer>
 </body>
 </html>

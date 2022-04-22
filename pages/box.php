@@ -1,3 +1,20 @@
+<?php
+session_start();
+
+require('../data/db.php');
+
+// if (!isset($_SESSION['username'])) {
+//     header('location: ../account.php');
+// }
+
+$nome_utente = $_SESSION['nome_utente'];
+$conn = new mysqli($db_host, $db_username, $db_password, $db_name);
+
+if (isset($_POST["espansione"])) $espansione = $_POST["espansione"];
+else $espansione = "";
+if (isset($_POST["prezzo"])) $prezzo = $_POST["prezzo"];
+else $prezzo = "";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,6 +37,7 @@
             <li><a href="carrello.php">Carrello</a></li>
             <li><a href="registrazione.php">Registrazione</a></li>
             <li><a href="login.php">Login</a></li>
+            <li><a href="logout.php">Logout</a></li>
         </ul>
         <div class="cta">
             <a href="founders.html" class="button"><img class="logo" src="immagini/founders.png" height="40px" alt=""></a>
@@ -33,47 +51,62 @@
     <div class="contenitore8">
         <h1 class="font-figo centered"> Ecoo i Box a tua disposizione! </h1>
         <div class="contenitore4">
-            <div class="contenitore7">
-                <img  src="../immagini/B/b1.png" height="400px" alt="">
-            </div>
-            <div class="contenitore7">
-                <img  src="../immagini/B/b2.png" height="400px" alt="">
-            </div>
-            <div class="contenitore7">
-                <img  src="../immagini/B/b3.png" height="400px" alt="">
-            </div>
-            <div class="contenitore7">
-                <img  src="../immagini/B/b4.png" height="400px" alt="">
-            </div>
-            <div class="contenitore7">
-                <img  src="../immagini/B/b5.png" height="400px" alt="">
-            </div>
-            <div class="contenitore7">
-                <img  src="../immagini/B/b6.png" height="400px" alt="">
-            </div>
-            <div class="contenitore7">
-                <img  src="../immagini/B/b7.png" height="400px" alt="">
-            </div>
-            <div class="contenitore7">
-                <img  src="../immagini/B/b8.png" height="400px" alt="">
-            </div>
+        <?php
+            $sql = "SELECT *
+                    FROM boxx";
+            $ris = $conn->query($sql);
+            while ($row = $ris->fetch_assoc()) {
+                $espansione = $row['codice_box'];
+                $prezzo = $row['prezzo'];
+                echo '
+                
+
+        <div class="contenitore5">
+            <img class="logo2" src="../immagini/' . $espansione . '.png" height="400px" alt="">
+          <table>
+          <tr>
+          <td> 
+          <td>
+          <form action="' . $_SERVER['PHP_SELF'] . '?espansione='. $espansione .'" method="post">
+                        <input class="hidden" value=' . $espansione . ' ></input><input type="submit" name="espansione" value="Compra">
+         </form>
+          </td>
+          <div class="minibox">
+          <div class="font2"> <br>' . $espansione . ' ' . $prezzo . ' €
+          </div>
+          </div>
+          </td>
+          </tr>
+          </table>
+
+        </div>
+        ';
+            }
+            if(isset($_POST["espansione"]) && !empty ($_POST['espansione']))
+            {
+            $tipo=urldecode($_GET["espansione"]);
+            $myquery = "SELECT prezzo
+            FROM bustina
+            WHERE espansione = '$tipo'";
+            $ris = $conn->query($myquery);
+            $tmp = $ris->fetch_assoc();
+            $prezzo = $tmp["prezzo"];
+            $myquery = "INSERT INTO carrello (prodotto, prezzo, nome_utente)
+            VALUES ('$tipo','$prezzo','$nome_utente')";
+            $conn->query('SET FOREIGN_KEY_CHECKS=0;');
+            $conn->query($myquery);
+
+            $conn->query('SET FOREIGN_KEY_CHECKS=1;');
+        }
+            ?>
         </div>
     </div>
-    <footer class="footer">
-    <div class="grid">
-      <div class="col reveal">
-        <p class="text-footer-nome font-figo1">Filippo Maconi</p>
-        <p class="text-footer-nome font-figo1">Instagram: filippo_maconi.</p>
-        <p class="text-footer-nome font-figo1">Telefono: 3926254418</p>
-      </div>
-
-      <div class="col reveal">
-        <p class="text-footer-nome font-figo1"> Matteo Tezza</p>
-        <p class="text-footer-nome font-figo1">Instagram: _tezzaa</p>
-        <p class="text-footer-nome font-figo1">Telefono: 3663557052</p>
-      </div>
-
-    </div>
-  </footer>
+    <footer>
+    <div class="footerpagina">
+      <br>
+      <br>
+     <p>© 2021 Tezza Matteo and Maconi Filippo - All rights reserved.</p>
+ </div>
+</footer>
 </body>
 </html>

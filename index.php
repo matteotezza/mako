@@ -31,6 +31,7 @@
             <li><a href="pages/carrello.php">Carrello</a></li>
             <li><a href="pages/registrazione.php">Registrazione</a></li>
             <li><a href="pages/login.php">Login</a></li>
+            <li><a href="pages/logout.php">Logout</a></li>
         </ul>
         <div class="cta">
             <a href="founders.html" class="button"><img class="logo" src="immagini/founders.png" height="40px" alt=""></a>
@@ -88,23 +89,6 @@
 
     </div>
 
-    <footer class="footer">
-    <div class="grid">
-      <div class="col reveal">
-        <p class="text-footer-nome font-figo1">Filippo Maconi</p>
-        <p class="text-footer-nome font-figo1">Instagram: filippo_maconi.</p>
-        <p class="text-footer-nome font-figo1">Telefono: 3926254418</p>
-      </div>
-
-      <div class="col reveal">
-        <p class="text-footer-nome font-figo1"> Matteo Tezza</p>
-        <p class="text-footer-nome font-figo1">Instagram: _tezzaa</p>
-        <p class="text-footer-nome font-figo1">Telefono: 3663557052</p>
-      </div>
-
-    </div>
-  </footer>
-
     <!-- Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js" integrity="sha512-cA8gcgtYJ+JYqUe+j2JXl6J3jbamcMQfPe0JOmQGDescd+zqXwwgneDzniOd3k8PcO7EtTW6jA7L4Bhx03SXoA==" crossorigin="anonymous"></script>
 
@@ -117,17 +101,9 @@
     </script>
 <footer>
     <div class="footerpagina">
-      <div class="medialinks">
-        <ul>
-          <li><a href="https://it-it.facebook.com/gcaerialphotos/%22%3E<i class="fa fa-facebook"></i></a></li>
-          <li><a href="https://www.instagram.com/gcaerialphotos/%22%3E<i class="fa fa-instagram"></i></a></li>
-          <li><a href="https://www.youtube.com/channel/UCnqOV7ThDAUVk59U3zi1kmg%22%3E<i class="fa fa-youtube"></i></a></li>
-        </ul>
-      </div>
       <br>
-      <hr>
       <br>
-     <p>© 2021 Tezza All rights reserved.</p>
+     <p>© 2021 Tezza Matteo and Maconi Filippo - All rights reserved.</p>
  </div>
 </footer>
 </body>
