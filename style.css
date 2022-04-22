@@ -209,9 +209,13 @@ form, form *{
 .hidden{
   display: none;
 }
+<<<<<<< HEAD
 .footerpagina
 {
     
+=======
+.footerpagina{
+>>>>>>> 2a8c9de3e5fefdf6c9bf5e4bc24640d9e9f31ca7
     background: #bfaa8c;
     padding: 20px;
     text-align: center;
