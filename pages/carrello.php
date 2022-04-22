@@ -40,7 +40,7 @@ else $prezzo = "";
             <li><a href="login.php">Login</a></li>
         </ul>
         <div class="cta">
-            <a href="founders.html" class="button"><img class="logo" src="immagini/founders.png" height="40px" alt=""></a>
+            <a href="founders.html" class="button"><img class="logo" src="immagini/Pikachu1" height="40px" alt=""></a>
         </div>
         <div class="hamburger">
             <span></span>

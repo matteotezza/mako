@@ -40,7 +40,7 @@ else $prezzo = "";
             <li><a href="logout.php">Logout</a></li>
         </ul>
         <div class="cta">
-            <a href="founders.html" class="button"><img class="logo" src="immagini/founders.png" height="40px" alt=""></a>
+            <a href="founders.html" class="button"><img class="logo" src="../immagini/Pikachu1.png" height="40px" alt=""></a>
         </div>
         <div class="hamburger">
             <span></span>
@@ -52,6 +52,9 @@ else $prezzo = "";
         <h1 class="font-figo centered"> Ecoo i Box a tua disposizione! </h1>
         <div class="contenitore4">
         <?php
+        function alert($msg){
+            echo "<script type='text/javascript'>alert('$msg');</script>";
+        }
             $sql = "SELECT *
                     FROM boxx";
             $ris = $conn->query($sql);
@@ -81,8 +84,13 @@ else $prezzo = "";
 
         </div>
         ';
+        
             }
-            if(isset($_POST["espansione"]) && !empty ($_POST['espansione']))
+            if(!isset($_SESSION['nome_utente'])){
+                alert("Devi fare il login per comprare qualcosa, <br> 
+                in caso non avessi ancora un account registrati");
+            }
+            else if(isset($_POST["espansione"]) && !empty ($_POST['espansione']))
             {
             $tipo=urldecode($_GET["espansione"]);
             $myquery = "SELECT prezzo
@@ -98,6 +106,7 @@ else $prezzo = "";
 
             $conn->query('SET FOREIGN_KEY_CHECKS=1;');
         }
+    
             ?>
         </div>
     </div>

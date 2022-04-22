@@ -34,7 +34,7 @@
             <li><a href="pages/logout.php">Logout</a></li>
         </ul>
         <div class="cta">
-            <a href="founders.html" class="button"><img class="logo" src="immagini/founders.png" height="40px" alt=""></a>
+            <a href="founders.html" class="button"><img class="logo" src="immagini/Pikachu1.png" height="40px" alt=""></a>
         </div>
         <div class="hamburger">
             <span></span>
@@ -78,11 +78,11 @@
             <p class="scritta"> Bustine </p>
         </div>
         <div class="box5">
-        <a href="pages/box.php"><img class="logo" src="immagini/B/b1.png" height="400px" alt=""></a>
+        <a href="pages/box.php"><img class="logo" src="immagini/box-sunmoon.png" height="400px" alt=""></a>
             <p  class="scritta"> Box </p>
         </div>
         <div class="box6">
-        <a href="pages/carte.php"><img class="logo" src="immagini/CS/carta_1.png" height="400px" alt=""></a>
+        <a href="pages/carte.php"><img class="logo" src="immagini/Pikachu.png" height="400px" alt=""></a>
             <p  class="scritta"> Carte singole </p>
         </div>
 
