@@ -94,8 +94,8 @@ else $prezzo = "";
             {
             $tipo=urldecode($_GET["espansione"]);
             $myquery = "SELECT prezzo
-            FROM bustina
-            WHERE espansione = '$tipo'";
+            FROM boxx
+            WHERE codice_box = '$tipo'";
             $ris = $conn->query($myquery);
             $tmp = $ris->fetch_assoc();
             $prezzo = $tmp["prezzo"];

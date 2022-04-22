@@ -50,7 +50,7 @@ else $prezzo = "";
         </div>
     </div>
     <div class="contenitore8">
-    <h1 class="font-figo centered"> Qui trovi la selezione delle carte singole</h1>
+    <h1 class="font-figo centered"> Qui trovi la selezione delle carte singole </h1>
     <div class="contenitore4">
     <?php
             $sql = "SELECT *
@@ -85,8 +85,8 @@ else $prezzo = "";
             {
             $tipo=urldecode($_GET["espansione"]);
             $myquery = "SELECT prezzo
-            FROM bustina
-            WHERE espansione = '$tipo'";
+            FROM carta
+            WHERE nome_carta = '$tipo'";
             $ris = $conn->query($myquery);
             $tmp = $ris->fetch_assoc();
             $prezzo = $tmp["prezzo"];
