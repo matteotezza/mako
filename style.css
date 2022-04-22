@@ -207,7 +207,6 @@ form, form *{
 .hidden{
   display: none;
 }
-<<<<<<< HEAD
 .footerpagina
 {
     background: #bfaa8c;
@@ -242,7 +241,6 @@ hr
 
 }
 
-=======
 
 .footer{
   background-image: url('background.png');
@@ -263,4 +261,3 @@ a{color: white;}
   .footer-a{padding-left: 50px;}
   .text-footer-nome{margin-top: 50px;}
 }
->>>>>>> 189d93194713016ee097625c1170548008289c16
