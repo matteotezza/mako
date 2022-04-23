@@ -62,13 +62,13 @@
     <div class="contenitore2">
         <h1 class="font-figo"> Top vendite </h1>
         <div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true }'>
-            <a href="fut.html" class="carousel-cell" id="zygardecard"></a>
-            <a href="carriera.html" class="carousel-cell" id="set-fuoriclasse"></a>
-            <a href="proclub.html" class="carousel-cell" id="box-ee"> </a>
-            <a href="proclub.html" class="carousel-cell" id="pikachu-vmax"> </a>
-            <a href="proclub.html" class="carousel-cell" id="bustina-vs"> </a>
-            <a href="proclub.html" class="carousel-cell" id="bustina-sdl"> </a>
-            <a href="proclub.html" class="carousel-cell" id="set-fc"> </a>
+            <a class="carousel-cell" id="zygardecard"></a>
+            <a class="carousel-cell" id="set-fuoriclasse"></a>
+            <a class="carousel-cell" id="box-ee"> </a>
+            <a class="carousel-cell" id="pikachu-vmax"> </a>
+            <a class="carousel-cell" id="bustina-vs"> </a>
+            <a class="carousel-cell" id="bustina-sdl"> </a>
+            <a class="carousel-cell" id="set-fc"> </a>
         </div>
     </div>
     <h1 class="font-figo1"> Cosa cerchi? </h1>

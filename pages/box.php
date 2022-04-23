@@ -3,11 +3,14 @@ session_start();
 
 require('../data/db.php');
 
-// if (!isset($_SESSION['username'])) {
-//     header('location: ../account.php');
-// }
+if (!isset($_SESSION['nome_utente'])) {
+    header('location: login.php');
+}
+else{
+   $nome_utente = $_SESSION['nome_utente'];
 
-$nome_utente = $_SESSION['nome_utente'];
+}
+
 $conn = new mysqli($db_host, $db_username, $db_password, $db_name);
 
 if (isset($_POST["espansione"])) $espansione = $_POST["espansione"];
