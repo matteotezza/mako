@@ -27,28 +27,20 @@ else $prezzo = "";
     <title>Carte Singole</title>
     <link rel="stylesheet" href="../style.css">
     <link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-<div class="header">
-        <div class="logo">
-            <a href="../index.php"><img class="logo" src="../immagini/logopoke.png" width="200px" height="auto" alt=""></a>
-        </div>
-        <ul class="menu">
-            <li><a href="home.php">Home</a></li>
-            <li><a href="carrello.php">Carrello</a></li>
-            <li><a href="registrazione.php">Registrazione</a></li>
-            <li><a href="login.php">Login</a></li>
-            <li><a href="logout.php">Logout</a></li>
-        </ul>
-        <div class="cta">
-            <a href="founders.html" class="button"><img class="logo" src="../immagini/Pikachu1.png" height="40px" alt=""></a>
-        </div>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+<nav>
+<a href="../index.php"> <img src="../immagini/logopoke.png" width= 100px alt="logo"> </a>
+   <ul>
+        <li> <a href="home.php"> Home</a></li>
+        <li> <a href="registrazione.php"> Registrazione</a> </li>
+        <li> <a href="login.php"> Login</a> </li>
+        <li> <a href="logout.php"> Logout</a> </li>
+        <li> <a href="logout.php"> <i class= "fa fa-shopping-bag"></i></a></li>
+   </ul>
+  </nav>
     </div>
     <div class="contenitore8">
     <h1 class="font-figo centered"> Qui trovi la selezione delle carte singole </h1>

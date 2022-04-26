@@ -18,30 +18,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.min.css" integrity="sha512-BiFZ6oflftBIwm6lYCQtQ5DIRQ6tm02svznor2GYQOfAlT3pnVJ10xCrU3XuXnUrWQ4EG8GKxntXnYEdKY0Ugg==" crossorigin="anonymous" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <div class="header">
-        <div class="logo">
-            <img class="logo" src="immagini/logopoke.png" width="200px" height="auto" alt="">
-        </div>
-        <ul class="menu">
-            <li><a href="pages/home.php">Home</a></li>
-            <li><a href="pages/carrello.php">Carrello</a></li>
-            <li><a href="pages/registrazione.php">Registrazione</a></li>
-            <li><a href="pages/login.php">Login</a></li>
-            <li><a href="pages/logout.php">Logout</a></li>
-        </ul>
-        <div class="cta">
-            <a href="founders.html" class="button"><img class="logo" src="immagini/Pikachu1.png" height="40px" alt=""></a>
-        </div>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
+<nav>
+      <img src="./immagini/logopoke.png" alt="logo">
+   <ul>
+        <li> <a href="./pages/home.php"> Home</a></li>
+        <li> <a href="./pages/registrazione.php"> Registrazione</a> </li>
+        <li> <a href="./pages/login.php"> Login</a> </li>
+        <li> <a href="./pages/logout.php"> Logout</a> </li>
+        <li> <a href="./pages/logout.php"> <i class= "fa fa-shopping-bag"></i></a></li>
+   </ul>
+  </nav>
     <div class="contenitore-inizio">
         <div class="box1">
             <h1 class="font-figo"> Benvenuti sul sito <br>

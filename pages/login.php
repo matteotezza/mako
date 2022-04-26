@@ -73,6 +73,7 @@ else {
         </tr>
     </table>
     <p><input type="submit" value="Accedi"></p>
-</form>   
+</form> 
+</div>  
 </body>
 </html>

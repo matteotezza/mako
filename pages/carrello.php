@@ -26,34 +26,26 @@ else $prezzo = "";
     <title>Bustine</title>
     <link rel="stylesheet" href="../style.css">
     <link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
+
 </head>
 
 <body>
-    <div class="header">
-        <div class="logo">
-            <a href="../index.php"><img class="logo" src="../immagini/logopoke.png" width="200px" height="auto" alt=""></a>
-        </div>
-        <ul class="menu">
-            <li><a href="home.php">Home</a></li>
-            <li><a href="carrello.php">Carrello</a></li>
-            <li><a href="registrazione.php">Registrazione</a></li>
-            <li><a href="login.php">Login</a></li>
-        </ul>
-        <div class="cta">
-            <a href="founders.html" class="button"><img class="logo" src="immagini/Pikachu1" height="40px" alt=""></a>
-        </div>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
+<nav>
+   <a href="../index.php"> <img src="../immagini/logopoke.png" width= 100px alt="logo"> </a>
+   <ul>
+        <li> <a href="/home.php"> Home</a></li>
+        <li> <a href="registrazione.php"> Registrazione</a> </li>
+        <li> <a href="login.php"> Login</a> </li>
+        <li> <a href="logout.php"> Logout</a> </li>
+   </ul>
+  </nav>
     <div class="contenitore8">
-        <h1 class="font-figo centered"> Scegli l'espansione che più preferisci </h1>
+        <h1 class="font-figo centered"> Questo è il tuo carrello </h1>
         <div class="contenitore4">
             <?php
             $sql = "SELECT *
-                    FROM bustina";
+                    FROM carrello
+                    WHERE nome_utente = $nome_utente";
             $ris = $conn->query($sql);
             while ($row = $ris->fetch_assoc()) {
                 $espansione = $row['espansione'];
@@ -62,7 +54,7 @@ else $prezzo = "";
                 
 
         <div class="contenitore5">
-            <img class="logo2" src="../immagini/' . $espansione . '.png" height="400px" alt="">
+            <img class="logo2" src="../immagini/' . $prodotto. '.png" height="400px" alt="">
           <table>
           <tr>
           <td> 
