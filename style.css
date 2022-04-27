@@ -275,11 +275,8 @@ nav a{
   color: #032459;
 }
 nav a:hover{
-  color: ye;
+  color: yellow;
   background-color: #032459;
   padding: 10px;
   border-radius: 10px; 
-}
-.logo3{
-
 }
