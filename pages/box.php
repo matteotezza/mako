@@ -55,6 +55,7 @@ else $prezzo = "";
             while ($row = $ris->fetch_assoc()) {
                 $espansione = $row['codice_box'];
                 $prezzo = $row['prezzo'];
+                
                 echo '
                 
 
@@ -93,13 +94,14 @@ else $prezzo = "";
             $ris = $conn->query($myquery);
             $tmp = $ris->fetch_assoc();
             $prezzo = $tmp["prezzo"];
-            $myquery = "INSERT INTO carrello (prodotto, prezzo, nome_utente)
-            VALUES ('$tipo','$prezzo','$nome_utente')";
+            $myquery = "INSERT INTO carrello (prodotto, prezzo, nome_utente, quantità)
+            VALUES ('$tipo','$prezzo','$nome_utente', 1)";
             $conn->query('SET FOREIGN_KEY_CHECKS=0;');
             $conn->query($myquery);
 
             $conn->query('SET FOREIGN_KEY_CHECKS=1;');
-        }
+        
+    }
     
             ?>
         </div>

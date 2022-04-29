@@ -10,6 +10,14 @@ else{
    $nome_utente = $_SESSION['nome_utente'];
 }
 $conn = new mysqli($db_host, $db_username, $db_password, $db_name);
+if($_SERVER["REQUEST_METHOD"] == "post" && isset($_POST["deletecarr"])){
+$prodotto = $_POST["prodotto"];
+$nome_utente = $_POST["nome_utente"];
+$deletecarr = "DELETE 
+               FROM carrello
+               WHERE nome_utente = '$nome_utente'
+               AND prodotto = '$prodotto'";
+}
 
  if (isset($_POST["prodotto"])) $espansione = $_POST["prodotto"];
  else $prodotto = "";
@@ -51,6 +59,7 @@ $conn = new mysqli($db_host, $db_username, $db_password, $db_name);
             while ($row = $ris->fetch_assoc()) {
                 $prodotto = $row['prodotto'];
                 $prezzo = $row['prezzo'];
+                $quantità = $row['quantità'];
                 echo '
                 
 
@@ -65,11 +74,16 @@ $conn = new mysqli($db_host, $db_username, $db_password, $db_name);
             </div>
         
           <div class="carrello2">
-          <input type="number" value="1"></td>
+          <input type="number" value="$quantità"></td>
                 </div>
                 <div class="carrello3">
-          <input type="submit" name= "delete" value="Rimuovi dal carrello"></td>
+                <form action = \"$_SERVER[PHP_SELF]\" method="post">
+          <input type="submit" name= "deletecarr" value="Rimuovi dal carrello">
+          <input type="hidden" name= "prodotto" value="$prodotto">
+          <input type="hidden" name= "nome_utente" value= " $nome_utente ">
+          </form>
                 </div>
+
                 </td>
           </table>
 
