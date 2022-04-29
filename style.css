@@ -280,3 +280,12 @@ nav a:hover{
   padding: 10px;
   border-radius: 10px; 
 }
+.class1{
+  width: 50%;
+}
+.class2{
+  width: 50%;
+}
+.contenitore10{
+  display: flex;
+}

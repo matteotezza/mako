@@ -48,47 +48,29 @@ else $prezzo = "";
                     WHERE nome_utente = $nome_utente";
             $ris = $conn->query($sql);
             while ($row = $ris->fetch_assoc()) {
-                $espansione = $row['espansione'];
+                $prodotto = $row['prodotto'];
                 $prezzo = $row['prezzo'];
                 echo '
                 
 
-        <div class="contenitore5">
+        <div class="contenitore10">
             <img class="logo2" src="../immagini/' . $prodotto. '.png" height="400px" alt="">
           <table>
           <tr>
           <td> 
-          
-          <div class="font2"> <br>' . $espansione . ' ' . $prezzo . ' €
+          <div class="class1">
+          <div class="font2"> <br>' . $prodotto . ' Prezzo: ' . $prezzo . ' €
           </div>
-          </td>
-          <td>
-          <form action="' . $_SERVER['PHP_SELF'] . '?espansione='. $espansione .'" method="post">
-                        <input class="hidden" value=' . $espansione . ' ></input><input type="submit" name="espansione" value="Compra">
-         </form>
-          </td>
-          </tr>
+          </div>
+          <div class="class2">
+          <td><input type="number" value="1"></td>
+                <td>price</td>
+                </div>
           </table>
 
         </div>
         ';
             }
-            if(isset($_POST["espansione"]) && !empty ($_POST['espansione']))
-            {
-            $tipo=urldecode($_GET["espansione"]);
-            $myquery = "SELECT prezzo
-            FROM bustina
-            WHERE espansione = '$tipo'";
-            $ris = $conn->query($myquery);
-            $tmp = $ris->fetch_assoc();
-            $prezzo = $tmp["prezzo"];
-            $myquery = "INSERT INTO carrello (prodotto, prezzo, nome_utente)
-            VALUES ('$tipo','$prezzo','$nome_utente')";
-            $conn->query('SET FOREIGN_KEY_CHECKS=0;');
-            $conn->query($myquery);
-
-            $conn->query('SET FOREIGN_KEY_CHECKS=1;');
-        }
             ?>
         </div>
 

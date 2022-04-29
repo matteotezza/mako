@@ -38,7 +38,7 @@ else $prezzo = "";
         <li> <a href="registrazione.php"> Registrazione</a> </li>
         <li> <a href="login.php"> Login</a> </li>
         <li> <a href="logout.php"> Logout</a> </li>
-        <li> <a href="logout.php"> <i class= "fa fa-shopping-bag"></i></a></li>
+        <li> <a href="carrello.php"> <i class= "fa fa-shopping-bag"></i></a></li>
    </ul>
   </nav>
     </div>
@@ -60,10 +60,12 @@ else $prezzo = "";
           <table>
           <tr>
           <td>
+          <div class="contenitore11">
           <form action="' . $_SERVER['PHP_SELF'] . '?espansione='. $espansione .'" method="post">
                         <input class="hidden" value=' . $espansione . ' ></input><input type="submit" name="espansione" value="Compra">
          </form>
           </td>
+          </div>
         
           <div class="font2"> <br>' . $espansione . ' ' . $prezzo . ' €
           </div>

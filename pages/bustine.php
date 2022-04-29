@@ -39,7 +39,7 @@ else $prezzo = "";
         <li> <a href="registrazione.php"> Registrazione</a> </li>
         <li> <a href="login.php"> Login</a> </li>
         <li> <a href="logout.php"> Logout</a> </li>
-        <li> <a href="logout.php"> <i class= "fa fa-shopping-bag"></i></a></li>
+        <li> <a href="carrello.php"> <i class= "fa fa-shopping-bag"></i></a></li>
    </ul>
   </nav>
     <div class="contenitore8">
