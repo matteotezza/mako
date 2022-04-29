@@ -68,6 +68,7 @@ CREATE TABLE IF NOT EXISTS `carrello` (
   `prodotto` char(50) NOT NULL DEFAULT '',
   `prezzo` float DEFAULT NULL,
   `nome_utente` char(50) NOT NULL DEFAULT '',
+  `quantità` int(11) DEFAULT NULL,
   KEY `prodotto` (`prodotto`),
   KEY `FK_carrello_cliente` (`nome_utente`),
   CONSTRAINT `FK_carrello_box` FOREIGN KEY (`prodotto`) REFERENCES `boxx` (`codice_box`) ON UPDATE CASCADE,
@@ -76,31 +77,19 @@ CREATE TABLE IF NOT EXISTS `carrello` (
   CONSTRAINT `FK_carrello_cliente` FOREIGN KEY (`nome_utente`) REFERENCES `cliente` (`nome_utente`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dump dei dati della tabella negozio_pokemon.carrello: ~22 rows (circa)
+-- Dump dei dati della tabella negozio_pokemon.carrello: ~10 rows (circa)
 /*!40000 ALTER TABLE `carrello` DISABLE KEYS */;
-INSERT INTO `carrello` (`prodotto`, `prezzo`, `nome_utente`) VALUES
-	('Invia', 5.5, 'maconifrocio'),
-	('Invia', 5.5, 'maconifrocio'),
-	('Compra', 5.5, 'maconifrocio'),
-	('Voltaggio Sfolgorante', 5.5, 'maconifrocio'),
-	('Voltaggio Sfolgorante', 5.5, 'maconifrocio'),
-	('Voltaggio Sfolgorante', 5.5, 'maconifrocio'),
-	('', 5.5, 'maconifrocio'),
-	('', 5.5, 'maconifrocio'),
-	('', 5.5, 'maconifrocio'),
-	('Regno Glaciale', 5.5, 'maconifrocio'),
-	('Regno Glaciale', 5.5, 'maconifrocio'),
-	('Set Jungle', 5.5, 'maconifrocio'),
-	('Eclissi Cosmica', 5.5, 'maconifrocio'),
-	('Evoluzioni', 5.5, 'maconifrocio'),
-	('Evoluzioni', 5.5, 'maconifrocio'),
-	('Evoluzioni', 0, 'maconifrocio'),
-	('Evoluzioni', 6, 'maconifrocio'),
-	('Set Jungle', 15, 'maconifrocio'),
-	('Evoluzioni', 6, 'maconifrocio'),
-	('Futuri Campioni', 6, 'maconifrocio'),
-	('Colpo Fusione', 5.5, 'maconifrocio'),
-	('Evoluzioni', 6, 'maconifrocio');
+INSERT INTO `carrello` (`prodotto`, `prezzo`, `nome_utente`, `quantità`) VALUES
+	('Collezione Lotte Blastoise-VMAX', 25, 'matteotezza8', 1),
+	('Collezione Kangaskhan GX', 20, 'matteotezza8', 1),
+	('Astri Lucenti (set allenatore fuoriclasse)', 45, 'matteotezza8', 1),
+	('Evoluzioni eteree', 120, 'matteotezza8', 1),
+	('Vaporeon', 8, 'matteotezza8', 1),
+	('Vaporeon', 8, 'matteotezza8', 1),
+	('Determinazione di Misty', 12, 'matteotezza8', 1),
+	('Sole e Luna', 200, 'matteotezza8', 1),
+	('Collezione Copperajah V', 25, 'matteotezza8', 1),
+	('Futuri Campioni', 6, 'matteotezza8', 1);
 /*!40000 ALTER TABLE `carrello` ENABLE KEYS */;
 
 -- Dump della struttura di tabella negozio_pokemon.carta
@@ -168,7 +157,7 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   PRIMARY KEY (`nome_utente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dump dei dati della tabella negozio_pokemon.cliente: ~2 rows (circa)
+-- Dump dei dati della tabella negozio_pokemon.cliente: ~3 rows (circa)
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
 INSERT INTO `cliente` (`nome_utente`, `password`, `nome`, `cognome`, `email`, `telefono`, `comune`, `indirizzo`) VALUES
 	('maconifrocio', 'leccapalle', 'Filip', 'Mako', 'leccolepallesudate@gmail.com', '111111111', 'stocazzo', 'via dalle palle'),
