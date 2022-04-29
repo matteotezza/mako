@@ -21,8 +21,8 @@
    </ul>
   </nav>
   
-    <div class="contenitore-inizio">
-        <div class="box1">
+        <div class="boxhome">
+            <div class="boxhome1">
             <h1 class="font-figo"> Chi siamo?</h1>
             <p> Siamo due ragazzi che da tutta la vita sono stati catturati  <br> 
             dalla magia dei pokemon, e che inseguendo questo sogno <br>
@@ -30,34 +30,26 @@
             Siamo un negozio alle prime armi, che però sta cercando <br>
             di farsi strada attraverso tutte le attività già presenti. 
         </div>
-        <div class="box2">
-            <img class="logo" src="../immagini/store.jpg" height="350px" alt="">
+        <div class="boxhomeimg1">
+            <img class="logo" src="../immagini/pikachupichu.jpg" height="400px" alt="">
         </div>
-        <div class="box3">
-            <img class="logo" src="../immagini/pokeball.png" height="400px" alt="">
         </div>
-    </div>
-    <div class="contenitore-inizio1">
-    <div class="box1">
-            <h1 class="font-figo"> Cosa vendiamo?</h1>
-            <p>
-              Vendiamo tutti i tipi e tipologie di carte pokemon, <br>
-              a partire dalle carte singole, alle bustine e ovviamente <br>
-              anche i box. <br>
+        <div class="boxhome">
+            <div class="boxhome1">
+            <h1 class="font-figo"> Cosa facciamo</h1>
+            <p> Vendiamo tutti i tipi e tipologie di carte pokemon, <br>
+              a partire dalle carte singole, fino ad arrivare alle bustine e ovviamente <br>
+              anche ai box. <br>
               Essendo ancora all'inizio della nostra attività abbiamo <br>
               deciso di appoggiarci al Federicstore, che ci fornisce <br>
               molti dei nostri materiali. <br>
               Con il tempo continueremo ad aumentare le nostre merci, <br>
               e speriamo di soddisfarvi tutti.
-            </p> 
         </div>
-        <div class="box2">
-            <img class="logo" src="../immagini/" height="350px" alt="">
+        <div class="boxhomeimg1">
+            <img class="logo" src="../immagini/la.jpg" height="400px" alt="">
         </div>
-        <div class="box3">
-            <img class="logo" src="../immagini/" height="400px" alt="">
-        </div>
-    </div>
+</div>
     <div class="box4">
       <p>
         Dai vostri PokeAllenatori preferiti è tutto, <br>

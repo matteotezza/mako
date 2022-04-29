@@ -29,7 +29,7 @@
         <li> <a href="./pages/registrazione.php"> Registrazione</a> </li>
         <li> <a href="./pages/login.php"> Login</a> </li>
         <li> <a href="./pages/logout.php"> Logout</a> </li>
-        <li> <a href="./pages/logout.php"> <i class= "fa fa-shopping-bag"></i></a></li>
+        <li> <a href="./pages/carrello.php"> <i class= "fa fa-shopping-bag"></i></a></li>
    </ul>
   </nav>
     <div class="contenitore-inizio">
