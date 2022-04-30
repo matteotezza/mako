@@ -10,19 +10,22 @@ else{
    $nome_utente = $_SESSION['nome_utente'];
 }
 $conn = new mysqli($db_host, $db_username, $db_password, $db_name);
-if($_SERVER["REQUEST_METHOD"] == "post" && isset($_POST["deletecarr"])){
-$prodotto = $_POST["prodotto"];
-$nome_utente = $_POST["nome_utente"];
-$deletecarr = "DELETE 
-               FROM carrello
-               WHERE nome_utente = '$nome_utente'
-               AND prodotto = '$prodotto'";
-}
+// if($_SERVER["REQUEST_METHOD"] == "post" && isset($_POST["prodotto"]) && isset($_POST["nome_utente"])){
+//     echo "Entrato";
+//     $prodotto = $_POST["prodotto"];
+//     $nome_utente = $_POST["nome_utente"];
+//     $deletecarr = "DELETE 
+//                 FROM carrello
+//                 WHERE nome_utente = '$nome_utente'
+//                 AND prodotto = '$prodotto'";
+//     $conn->query($deletecarr) or die($conn->error);
 
- if (isset($_POST["prodotto"])) $espansione = $_POST["prodotto"];
- else $prodotto = "";
- if (isset($_POST["prezzo"])) $prezzo = $_POST["prezzo"];
- else $prezzo = "";
+// }
+
+if (isset($_POST["prodotto"])) $espansione = $_POST["prodotto"];
+else $prodotto = "";
+if (isset($_POST["prezzo"])) $prezzo = $_POST["prezzo"];
+else $prezzo = "";
 ?>
 
 <!DOCTYPE html>
@@ -52,6 +55,22 @@ $deletecarr = "DELETE
         <h1 class="font-figo centered"> Questo è il tuo carrello </h1>
         <div class="contenitore4">
             <?php
+                // echo "<p>". $_POST["prodotto"] . "</p>";
+                // echo "<p>". $_POST["nome_utente"] . "</p>";
+                if(isset($_POST["prodotto"]) && isset($_POST["nome_utente"])){
+                    $prodotto = $_POST["prodotto"];
+                    $nome_utente = $_POST["nome_utente"];
+                    $deletecarr = "DELETE 
+                                FROM carrello
+                                WHERE nome_utente = '$nome_utente'
+                                AND prodotto = '$prodotto'";
+                    $conn->query($deletecarr) or die($conn->error);
+
+                } else {
+                    // echo "<p>NON Entrato</p>";
+                }
+
+
             $sql = "SELECT *
                     FROM carrello
                     WHERE nome_utente = '$nome_utente'";
@@ -61,34 +80,30 @@ $deletecarr = "DELETE
                 $prezzo = $row['prezzo'];
                 $quantità = $row['quantità'];
                 echo '
-                
-
-        <div class="contenitore11">
-            <img class="logo2" src="../immagini/' . $prodotto. '.png" height="400px" alt="">
-          <table>
-          <tr>
-          <td> 
-            <div class="carrello1">
-            <div class="font2"> <br>' . $prodotto . ' Prezzo: ' . $prezzo . ' €
-            </div>
-            </div>
-        
-          <div class="carrello2">
-          <input type="number" value="$quantità"></td>
-                </div>
-                <div class="carrello3">
-                <form action = \"$_SERVER[PHP_SELF]\" method="post">
-          <input type="submit" name= "deletecarr" value="Rimuovi dal carrello">
-          <input type="hidden" name= "prodotto" value="$prodotto">
-          <input type="hidden" name= "nome_utente" value= " $nome_utente ">
-          </form>
-                </div>
-
-                </td>
-          </table>
-
-        </div>
-        ';
+                    <div class="contenitore11">
+                        <img class="logo2" src="../immagini/' . $prodotto. '.png" height="400px" alt="">
+                        <table>
+                            <tr>
+                                <td> 
+                                    <div class="carrello1">
+                                        <div class="font2"> <br>' . $prodotto . ' Prezzo: ' . $prezzo . ' €
+                                        </div>
+                                    </div>
+                    
+                                    <div class="carrello2">
+                                        <input type="number" value="$quantità"></td>
+                                    </div>
+                                    <div class="carrello3">
+                                        <form action = '. $_SERVER["PHP_SELF"] .' method="post">
+                                            <input type="submit" name= "deletecarr" value="Rimuovi dal carrello">
+                                            <input type="hidden" name= "prodotto" value="'.$prodotto.'">
+                                            <input type="hidden" name= "nome_utente" value= "'.$nome_utente.'">
+                                        </form>
+                                    </div>
+                                </td>
+                        </table>
+                    </div>
+                ';
             }
             ?>
         </div>
