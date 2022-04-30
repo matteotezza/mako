@@ -51,6 +51,16 @@ else $prezzo = "";
         <tr>
             <td>Data di scadenza</td><td><input type="month" name="password" value="<?php /*echo $password; */?>" required></td>
         </tr>
+        <tr>
+            <td><p>Il tuo ordine sarà inviato all'indirizzo da te impostato:<?php 
+            $myquery = "SELECT indirizzo
+                FROM cliente
+                WHERE nome_utente = '$nome_utente'";
+                $ris=$conn->query($myquery) or die($conn->error);
+                $ris=$ris->fetch_assoc();
+                $indirizzo=$ris['indirizzo'];
+                echo $indirizzo?></p></td>
+        </tr>
     </table>
     <input type="submit" value="Conferma">
       </div>

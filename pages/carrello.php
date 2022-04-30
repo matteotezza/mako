@@ -78,7 +78,7 @@ else $prezzo = "";
             while ($row = $ris->fetch_assoc()) {
                 $prodotto = $row['prodotto'];
                 $prezzo = $row['prezzo'];
-                $quantità = $row['quantità'];
+                $quantita = $row['quantità'];
                 echo '
                     <div class="contenitore11">
                         <img class="logo2" src="../immagini/' . $prodotto. '.png" height="400px" alt="">
@@ -86,12 +86,12 @@ else $prezzo = "";
                             <tr>
                                 <td> 
                                     <div class="carrello1">
-                                        <div class="font2"> <br>' . $prodotto . ' Prezzo: ' . $prezzo . ' €
+                                        <div class="font2"> <br>' . $prodotto . ' Prezzo: <span id="prezzo-'.$prodotto.'">' . $prezzo*$quantita . ' €</span>
                                         </div>
                                     </div>
                     
                                     <div class="carrello2">
-                                        <input type="number" value="$quantità"></td>
+                                        <input type="number" value="'.$quantita.'" id="quantita-'.$prodotto.'" onchange="update(this)"></td>
                                     </div>
                                     <div class="carrello3">
                                         <form action = '. $_SERVER["PHP_SELF"] .' method="post">
@@ -115,3 +115,38 @@ else $prezzo = "";
 </body>
 
 </html>
+
+<script>
+
+    let utente_global = "<?php echo $nome_utente?>";
+
+
+    function update(element){
+        let data = element.id.split('-');
+        let pricetag = document.getElementById(`prezzo-${data[1]}`);
+
+        send(data[1], utente_global, element.value, pricetag);
+    }
+
+    function send(prodotto, utente, quantita, pricetag) {
+    let xhtpp = new XMLHttpRequest()
+
+    xhtpp.open('GET', `./quantitaupdate.php?t=${prodotto}&n=${utente}&q=${quantita}`)
+    xhtpp.onreadystatechange = function() {
+        // In local files, status is 0 upon success in Mozilla Firefox
+        if (this.readyState === XMLHttpRequest.DONE) {
+
+            if (this.status === 0 || (this.status >= 200 && this.status < 400)) {
+                // The request has been completed successfully
+                let response = this.responseText;
+                
+                pricetag.innerHTML = response;
+            } else {
+                //errore
+            }
+        }
+    }
+    xhtpp.send()
+}
+
+</script>

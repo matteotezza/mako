@@ -55,23 +55,19 @@ else $prezzo = "";
                 echo '
                 
 
-        <div class="contenitore6">
-            <img class="logo2" src="../immagini/' . $espansione . '.png" height="400px" alt="">
-          <table>
-          <tr>
-          <td>
-          <div class="contenitore11">
-          <form action="' . $_SERVER['PHP_SELF'] . '?espansione='. $espansione .'" method="post">
-                        <input class="hidden" value=' . $espansione . ' ></input><input type="submit" name="espansione" value="Compra">
-         </form>
-          </td>
-          </div>
-        
+        <div class="contenitore5">
+            <img class="mauto" src="../immagini/' . $espansione . '.png" height="400px" alt="">
+          <div>
+          
           <div class="font2"> <br>' . $espansione . ' ' . $prezzo . ' €
           </div>
         
-          </tr>
-          </table>
+          <div class="contenitore11 mauto">
+          <form action="' . $_SERVER['PHP_SELF'] . '?espansione='. $espansione .'" method="post">
+                        <input class="hidden" value=' . $espansione . ' ></input><input type="submit" name="espansione" value="Compra">
+         </form>
+          </div>
+          </div>
 
         </div>
         ';
@@ -80,17 +76,35 @@ else $prezzo = "";
             {
             $tipo=urldecode($_GET["espansione"]);
             $myquery = "SELECT prezzo
-            FROM carta
-            WHERE nome_carta = '$tipo'";
+                FROM carta
+                WHERE nome_carta = '$tipo'";
             $ris = $conn->query($myquery);
             $tmp = $ris->fetch_assoc();
             $prezzo = $tmp["prezzo"];
-            $myquery = "INSERT INTO carrello (prodotto, prezzo, nome_utente, quantità)
-            VALUES ('$tipo','$prezzo','$nome_utente', 1)";
-            $conn->query('SET FOREIGN_KEY_CHECKS=0;');
-            $conn->query($myquery);
+            $quantita = $tmp["quantita"];
+            $myquery = "SELECT *
+            FROM carrello
+            WHERE nome_utente = '$nome_utente' AND prodotto = '$tipo'";
+            $ris = $conn->query($myquery);
+            $tmp1=$ris->fetch_assoc();
+            $quantita=$tmp1['quantità'];
+            if ($ris->num_rows>0){
+                $quantita=$quantita+1;
+                $myquery="UPDATE carrello
+                SET quantità = $quantita
+                WHERE nome_utente = '$nome_utente' AND prodotto = '$tipo'";
+                $conn->query($myquery);
+            }
+            else{
+                $myquery = "INSERT INTO carrello (prodotto, prezzo, nome_utente, quantità)
+                VALUES ('$tipo','$prezzo','$nome_utente', 1)";
+                $conn->query('SET FOREIGN_KEY_CHECKS=0;');
+                $conn->query($myquery);
 
-            $conn->query('SET FOREIGN_KEY_CHECKS=1;');
+                $conn->query('SET FOREIGN_KEY_CHECKS=1;');
+            }
+
+            
         }
             ?>
     </div>

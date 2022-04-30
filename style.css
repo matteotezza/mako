@@ -206,6 +206,7 @@ hr {
 
 .font2 {
   font: italic small-caps bold 16px/2 cursive;
+  text-align: center;
 }
 
 .minibox {
@@ -344,11 +345,15 @@ button {
   display: flex;
   flex-wrap: wrap ;
   justify-content: space-between;
-  width: 50%;
+  width: fit-content;
 }
 .carrello2{
   margin-right: 80%;
 }
 .carrello3{
   margin-right: 80%;
+}
+
+.mauto{
+  margin: auto;
 }
