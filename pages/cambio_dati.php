@@ -97,7 +97,6 @@
 				<input type="submit" name="pulsante_modifica" value="<?php if($modifica==false) echo $strmodifica; else echo $strconferma; ?>">
 			</p>
 		</form>	
-	</div>	
-	<?php include ('footer.php') ?>
+	</div>
 </body>
 </html>

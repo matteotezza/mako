@@ -49,6 +49,7 @@ else $prezzo = "";
         <li> <a href="registrazione.php"> Registrazione</a> </li>
         <li> <a href="login.php"> Login</a> </li>
         <li> <a href="logout.php"> Logout</a> </li>
+        <li> <a href="cambio_dati.php"> Cambio dati</a> </li>
    </ul>
   </nav>
     <div class="contenitore8">
