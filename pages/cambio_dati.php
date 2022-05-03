@@ -1,7 +1,7 @@
 <?php
 	session_start();
 
-	require('data/db.php');
+	require('../data/db.php');
 
 	if(!isset($_SESSION['nome_utente'])){
 		header('location: login.php');
@@ -12,7 +12,7 @@
 	$strmodifica = "Modifica";
 	$strconferma = "Conferma";
 
-	$conn = new mysqli($db_servername,$db_username,$db_password,$db_name);
+	$conn = new mysqli($db_host, $db_username, $db_password, $db_name);
 	$modifica = false;
 	if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["pulsante_modifica"])) {
 		if($_POST["pulsante_modifica"] == $strmodifica){
@@ -22,15 +22,15 @@
 		}
 
 		if ($modifica == false){
-			$sql = "UPDATE users
-					SET nome = '".$_POST["Nome"]."',
+			$sql = "UPDATE cliente
+			            SET nome = '".$_POST["Nome"]."',
                         password = '".$_POST["pwd"]."',
                         comune ='" .$_POST["Comune"] ."',
 						cognome = '".$_POST["Cognome"]."', 
 						email = '".$_POST["email"]."', 
-						indirizzo = '".$_POST["indirizzo"]."' 
-                        comune = '".$_POST["comune"]."'
-					WHERE nome_utente = '".$username."'";
+						indirizzo = '".$_POST["indirizzo"]."',
+						telefono = '".$_POST["telefono"]."'
+                       WHERE nome_utente = '".$username."'";
 			if($conn->query($sql) == true) {
 				echo "Record updated successfully";
 			} else {
@@ -50,12 +50,24 @@
 	<link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
+<nav>
+<a href="../index.php"> <img src="../immagini/logopoke.png" width= 100px alt="logo"> </a>
+   <ul>
+        <li> <a href="home.php"> Home</a></li>
+        <li> <a href="registrazione.php"> Registrazione</a> </li>
+        <li> <a href="login.php"> Login</a> </li>
+        <li> <a href="logout.php"> Logout</a> </li>
+        <li> <a href="carrello.php"> <i class= "fa fa-shopping-bag"></i></a></li>
+        
+   </ul>
+  </nav>
 	<div class="contenuto">
+		
 		<h1>Dati Personali</h1>
 		<?php
 			$sql = "SELECT *
-				FROM users
-				WHERE username='".$username."'";
+				FROM cliente
+				WHERE nome_utente='".$username."'";
 			//echo $sql;
 			$ris = $conn->query($sql) or die("<p>Query fallita!</p>");
 			// $row = $ris->fetch_array(MYSQLI_ASSOC);
@@ -82,16 +94,14 @@
 					<td>Telefono:</td> <td><input type="text" class="input_dati_personali" name="telefono" value="<?php echo $row["telefono"]; ?>" <?php if(!$modifica) echo "disabled='disabled'"?>></td>
 				</tr>
                 <tr>
-					<td>Comune:</td> <td><input type="text" class="input_dati_personali" name="comune" value="<?php echo $row["comune"]; ?>" <?php if(!$modifica) echo "disabled='disabled'"?>></td>
+					<td>Comune:</td> <td><input type="text" class="input_dati_personali" name="Comune" value="<?php echo $row["comune"]; ?>" <?php if(!$modifica) echo "disabled='disabled'"?>></td>
 				</tr>
 				<tr>
 					<td>Indirizzo:</td> <td><input type="text" class="input_dati_personali" name="indirizzo" value="<?php echo $row["indirizzo"]; ?>" <?php if(!$modifica) echo "disabled='disabled'"?>></td>
 				</tr>
-
-				<?php
-					echo "<p>" .$row["Nome"] ."</p>";
-					echo "<p>" .$_POST["Nome"] ."</p>";
-				?>
+				<tr>
+					
+				
 			</table>
 			<p style="text-align: center">
 				<input type="submit" name="pulsante_modifica" value="<?php if($modifica==false) echo $strmodifica; else echo $strconferma; ?>">

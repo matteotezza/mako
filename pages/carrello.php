@@ -108,7 +108,7 @@ else $prezzo = "";
             }
             ?>
         </div>
-        <div class="button">
+        <div class="button centered">
         <a href="checkout.php"> Prosegui al checkout </a>
         </div> 
     </div>

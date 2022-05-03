@@ -165,6 +165,8 @@ form * {
 }
 
 .contenitore8 {
+  display: flex;
+  flex-wrap: wrap;
   margin-top: 80px;
 }
 
